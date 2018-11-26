@@ -37,7 +37,11 @@ module.exports = {
                 content: 'width=device-width, initial-scale=1',
             },
         ],
-        link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+        link: [
+            { rel: 'dns-prefetch', href: '//fonts.googleapis.com' },
+            { rel: 'dns-prefetch', href: '//wp.solam.com' },
+            { rel: 'icon', type: 'image/png', href: '/favicon.png' },
+        ],
     },
 
     /*
