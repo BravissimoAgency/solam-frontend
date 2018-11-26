@@ -6,10 +6,10 @@ body {
 }
 
 body {
-    font-weight: 300;
+    font-weight: 400;
     color: var(--primaryTextColor);
     font-family: var(--primaryFont);
-    font-size: 18px;
+    font-size: 16px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: #eff1f4;

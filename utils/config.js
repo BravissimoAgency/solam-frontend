@@ -1,5 +1,5 @@
-const baseUrl = 'http://192.168.1.23/headless-wordpress-starter/public_html';
-const apiUrl = 'http://192.168.1.23/headless-wordpress-starter/public_html/wp-json';
+const baseUrl = 'https://solam.netlify.com';
+const apiUrl = 'https://wp.solam.com/wp-json';
 
 exports.baseUrl = baseUrl;
 exports.apiUrl = apiUrl;

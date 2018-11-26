@@ -2,13 +2,9 @@
     /*
     // Colors
     */
-    --primaryTextColor: #4d4c4c;
-    --primaryColor: #005c72;
-    --secondaryColor: #73ac2c;
-    --successColor: #4caf50;
-    --infoColor: #2196f3;
-    --warningColor: #ffc107;
-    --errorColor: #ff5252;
+    --primaryTextColor: #434242;
+    --primaryColor: #13498e;
+    --secondaryColor: #e73137;
     /*
     // Fonts
     */
@@ -27,11 +23,11 @@
 // Media queries
 */
 
-@custom-media --smallDesktop (max-width: 1600px);
-@custom-media --laptop (max-width: 1380px);
+@custom-media --smallDesktop (max-width: 1700px);
+@custom-media --laptop (max-width: 1450px);
 @custom-media --largeTablet (max-width: 1240px);
 @custom-media --tablet (max-width: 1030px);
 @custom-media --mediumTablet (max-width: 860px);
 @custom-media --smallTablet (max-width: 760px);
-@custom-media --smallerTablet (max-width: 600px);
-@custom-media --mobile (max-width: 480px);
+@custom-media --mobile (max-width: 600px);
+@custom-media --smallMobile (max-width: 359px);
