@@ -8,7 +8,7 @@
             ref="image"
             :src="imageSrc"
             :alt="alt"
-            :class="[classes, loaded ? 'loaded' : '']"
+            :class="[classes, isLoaded ? 'loaded' : '']"
             class="appImage objectFitCover"
         >
     </picture>
@@ -46,11 +46,6 @@ export default {
         loaded: false,
     }),
     computed: {
-        classesOut() {
-            const classes = this.classes.split(' ');
-
-            return classes;
-        },
         isLoaded() {
             return !this.lazy || this.loaded;
         },

@@ -1,15 +1,19 @@
 <template>
     <div class="page">
-        <div class="container">
-            <h1 class="text-center">{{ page.top_section.heading }}</h1>
-        </div>
+        <TopSection
+            :top-section="page.top_section"
+        />
     </div>
 </template>
 
 <script>
+import TopSection from '../components/ui/TopSection.vue';
 import { getMeta, updatePage } from '../utils/helpers';
 
 export default {
+    components: {
+        TopSection,
+    },
     head() {
         return getMeta(this.page.yoast);
     },
