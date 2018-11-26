@@ -1,11 +1,11 @@
 <template>
-    <header class="bg-grey-light">
+    <header class="bg-white">
         <div class="container">
-            <div class="flex py-6 h-24">
-                <div class="TheHeader__logoHolder flex flex-no-shrink bg-white p-6 -mt-4 shadow-lg">
+            <div class="flex inner">
+                <div class="logoHolder flex flex-no-shrink">
                     <Logo/>
                 </div>
-                <div class="TheHeader__navigationHolder flex flex-grow items-center justify-end">
+                <div class="navigationHolder flex flex-grow items-center justify-end">
                     <TheNavigation/>
                 </div>
             </div>
@@ -26,8 +26,11 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.TheHeader__logoHolder {
-    width: 127px;
-    height: 188px;
+.logoHolder {
+    width: 216px;
+    height: 60px;
+}
+.inner {
+    padding: 30px 0;
 }
 </style>

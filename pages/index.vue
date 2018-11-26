@@ -1,5 +1,5 @@
 <template>
-    <div class="page py-6">
+    <div class="page">
         <div class="container">
             <h1 class="text-center">{{ page.post_title }}</h1>
         </div>

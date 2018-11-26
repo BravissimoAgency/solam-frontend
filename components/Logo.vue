@@ -5,7 +5,7 @@
     >
         <img
             class="block w-full h-full"
-            src="../assets/images/logo.svg"
+            src="../assets/images/logo.png"
             alt=""
         >
     </nuxt-link>
