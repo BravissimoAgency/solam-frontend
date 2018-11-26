@@ -3,16 +3,27 @@
         <TopSection
             :top-section="page.top_section"
         />
+        <template
+            v-for="(module, index) in page.modules"
+        >
+            <PreambleImage
+                v-if="module.acf_fc_layout === 'preamble_image'"
+                :key="index"
+                :preamble-image="module"
+            />
+        </template>
     </div>
 </template>
 
 <script>
 import TopSection from '../components/ui/TopSection.vue';
+import PreambleImage from '../components/ui/PreambleImage.vue';
 import { getMeta, updatePage } from '../utils/helpers';
 
 export default {
     components: {
         TopSection,
+        PreambleImage,
     },
     head() {
         return getMeta(this.page.yoast);
