@@ -27,8 +27,51 @@ async function generateMenu(dir) {
     });
 }
 
+async function generateOptions(dir) {
+    const res = await axios.get(`${apiUrl}/api/options`);
+
+    const path = `${dir}/options.json`;
+    fs.writeFile(path, JSON.stringify(res.data), (err) => {
+        if (err) throw err;
+    });
+}
+
+async function generateProducts(dir) {
+    const res = await axios.get(`${apiUrl}/api/product`);
+
+    const path = `${dir}/products.json`;
+    fs.writeFile(path, JSON.stringify(res.data), (err) => {
+        if (err) throw err;
+    });
+}
+
+async function generateShortcuts(dir) {
+    const res = await axios.get(`${apiUrl}/api/shortcut`);
+
+    const path = `${dir}/shortcuts.json`;
+    fs.writeFile(path, JSON.stringify(res.data), (err) => {
+        if (err) throw err;
+    });
+}
+
+async function generateApplications(dir) {
+    const res = await axios.get(`${apiUrl}/api/application`);
+
+    const path = `${dir}/applications.json`;
+    fs.writeFile(path, JSON.stringify(res.data), (err) => {
+        if (err) throw err;
+    });
+}
+
 export default async function generateJsonFiles(dir) {
-    return Promise.all([generatePages(dir), generateMenu(dir)]);
+    return Promise.all([
+        generatePages(dir), 
+        generateMenu(dir),
+        generateOptions(dir),
+        generateProducts(dir),
+        generateShortcuts(dir),
+        generateApplications(dir),
+    ]);
 }
 
 async function init(dir) {
