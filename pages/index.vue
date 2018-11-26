@@ -1,11 +1,13 @@
 <template>
-    <div class="page relative">
-        <div class="inner">
-            <h1>{{ page.heading }}</h1>
-            <div
-                class="preamble"
-                v-html="page.preamble"
-            ></div>
+    <div class="frontpage relative">
+        <div class="left">
+            <div class="inner">
+                <h1 class="heading">{{ page.heading }}</h1>
+                <div
+                    class="preamble"
+                    v-html="page.preamble"
+                ></div>
+            </div>
         </div>
         <div class="imageHolder relative">
             <AppImage
@@ -42,17 +44,29 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.inner {
-    width: 53%;
-    height: 100vh;
+.frontpage {
+    overflow: hidden;
     background-color: var(--primaryColor);
-    color: #fff;
-    padding: 100px;
+}
+.left {
+    background-color: var(--primaryColor);
+    transform: skew(-10deg);
     position: relative;
     z-index: 1;
+    width: 53%;
+    height: 100vh;
+    margin-left: -120px;
+}
+.inner {
+    color: #fff;
+    padding: 100px;
+    transform: skew(10deg);
+}
+.heading {
+    margin-bottom: 40px;
 }
 .imageHolder {
-    width: 53%;
+    width: 60%;
     height: 100vh;
     position: absolute;
     top: 0;
