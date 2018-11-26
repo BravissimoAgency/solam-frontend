@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import menu from '../static/json/menu.json';
+import menu from '../../static/json/menu.json';
 
 export default {
     data: () => ({

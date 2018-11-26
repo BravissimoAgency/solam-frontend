@@ -43,7 +43,7 @@ module.exports = {
     /*
      ** Customize the progress-bar color
      */
-    loading: { color: '#FFFFFF' },
+    loading: { color: '#13498e' },
 
     /*
      ** Global CSS
@@ -56,6 +56,7 @@ module.exports = {
     plugins: [
         { src: '~/plugins/polyfills', ssr: false },
         '~/plugins/app-link',
+        '~/plugins/app-image',
         '~/plugins/portal-vue',
         { src: '~/plugins/v-click-outside', ssr: false },
     ],

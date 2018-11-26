@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import Logo from './Logo.vue';
+import Logo from '../ui/Logo.vue';
 import TheNavigation from './TheNavigation.vue';
 
 export default {

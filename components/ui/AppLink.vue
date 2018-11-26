@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import { baseUrl } from '../utils/config';
-import { makeUrlRelative } from '../utils/helpers';
+import { baseUrl } from '../../utils/config';
+import { makeUrlRelative } from '../../utils/helpers';
 
 export default {
     props: {

@@ -1,7 +1,7 @@
 <template>
     <div class="page">
         <div class="container">
-            <h1 class="text-center">{{ page.post_title }}</h1>
+            <h1 class="text-center">{{ page.top_section.heading }}</h1>
         </div>
     </div>
 </template>
