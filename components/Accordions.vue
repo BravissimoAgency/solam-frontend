@@ -5,6 +5,7 @@
                 v-for="(accordion, index) in accordions"
                 :key="index"
                 :title="accordion.title"
+                :show-logo="showLogo"
             >
                 <TwoColumn>
                     <div
@@ -37,6 +38,10 @@ export default {
         accordions: {
             type: Array,
             required: true,
+        },
+        showLogo: {
+            type: Boolean,
+            default: false,
         },
     },
 };

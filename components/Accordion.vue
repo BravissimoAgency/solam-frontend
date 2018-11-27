@@ -4,9 +4,19 @@
         class="accordion"
     >
         <div
+            :class="{'logoShown': showLogo}"
             class="header"
             @click="toggle()"
         >
+            <div
+                v-if="showLogo"
+                class="logoHolder"
+            >
+                <AppImage
+                    :image="logo"
+                    :use-webp="false"
+                />
+            </div>
             <span class="line"></span>
             <h3 class="title">{{ title }}</h3>
             <button
@@ -40,16 +50,23 @@
 
 <script>
 /* eslint-disable no-param-reassign */
+import logo from '../assets/images/logo-grey.png';
+
 export default {
     props: {
         title: {
             type: String,
             required: true,
         },
+        showLogo: {
+            type: Boolean,
+            default: false,
+        },
     },
     data: () => ({
         open: false,
         transition: 350,
+        logo,
     }),
     methods: {
         slideDown(el, done) {
@@ -108,6 +125,13 @@ export default {
     display: flex;
     align-items: center;
 }
+.logoHolder {
+    width: 126px;
+    line-height: 0;
+    margin-top: 12px;
+    margin-left: 6px;
+    margin-right: 26px;
+}
 .line {
     width: 3px;
     height: 25px;
@@ -121,6 +145,10 @@ export default {
     color: var(--primaryColor);
     margin: 0;
     padding-left: 30px;
+}
+.logoShown .title {
+    letter-spacing: 5.2px;
+    text-transform: uppercase;
 }
 .button {
     position: absolute;

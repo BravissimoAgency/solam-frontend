@@ -1,6 +1,7 @@
 <template>
     <Accordions
         :accordions="products"
+        :show-logo="true"
     />
 </template>
 
