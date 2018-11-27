@@ -54,6 +54,11 @@
                 v-if="module.acf_fc_layout === 'contact_info'"
                 :key="index"
             />
+            <CompanyInfo
+                v-if="module.acf_fc_layout === 'company_info'"
+                :key="index"
+                :company-info="module"
+            />
         </template>
     </div>
 </template>
@@ -67,6 +72,7 @@ import TwoColumn from '../components/ui/TwoColumn.vue';
 import Shortcuts from '../components/Shortcuts.vue';
 import Applications from '../components/Applications.vue';
 import ContactSection from '../components/ContactSection.vue';
+import CompanyInfo from '../components/CompanyInfo.vue';
 import { getMeta, updatePage } from '../utils/helpers';
 
 export default {
@@ -79,6 +85,7 @@ export default {
         Shortcuts,
         Applications,
         ContactSection,
+        CompanyInfo,
     },
     head() {
         return getMeta(this.page.yoast);
