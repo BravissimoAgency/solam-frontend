@@ -6,7 +6,7 @@
                 <nuxt/>
             </main>
         </div>
-        <TheFooter/>
+        <TheFooter v-if="$route.path !== '/'"/>
         <portal-target name="endOfPage"/>
     </div>
 </template>
