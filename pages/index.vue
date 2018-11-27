@@ -12,12 +12,14 @@
         <div class="imageHolder relative">
             <AppImage
                 :image="page.background_image.sizes.large"
+                :alt="page.background_image.alt"
                 :lazy="false"
                 classes="ab100"
             />
             <div class="girl">
                 <AppImage
                     :image="page.image.sizes.large"
+                    :alt="page.image.alt"
                     :lazy="false"
                 />
             </div>

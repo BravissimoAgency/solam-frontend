@@ -8,9 +8,13 @@
                 ></div>
             </div>
         </div>
-        <div class="right">
+        <div
+            v-if="preambleImage.image"
+            class="right"
+        >
             <AppImage
                 :image="preambleImage.image.sizes.large"
+                :alt="preambleImage.image.alt"
             />
         </div>
     </section>

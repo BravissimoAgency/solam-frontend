@@ -2,6 +2,7 @@
     <section class="topSection relative">
         <AppImage
             :image="topSection.background_image.sizes.large"
+            :alt="topSection.background_image.alt"
             :lazy="false"
             classes="ab100"
         />
