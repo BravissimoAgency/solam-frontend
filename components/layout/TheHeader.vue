@@ -1,13 +1,11 @@
 <template>
     <header class="bg-white">
-        <div class="container">
-            <div class="flex inner">
-                <div class="logoHolder flex flex-no-shrink">
-                    <Logo/>
-                </div>
-                <div class="navigationHolder flex flex-grow items-center justify-end">
-                    <TheNavigation/>
-                </div>
+        <div class="flex inner">
+            <div class="logoHolder flex flex-no-shrink">
+                <Logo/>
+            </div>
+            <div class="navigationHolder flex flex-grow items-center justify-end">
+                <TheNavigation/>
             </div>
         </div>
     </header>
@@ -31,6 +29,6 @@ export default {
     height: 60px;
 }
 .inner {
-    padding: 30px 0;
+    padding: 30px 50px;
 }
 </style>

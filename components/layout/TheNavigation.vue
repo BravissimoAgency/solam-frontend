@@ -4,12 +4,12 @@
             <li
                 v-for="item in menu.items"
                 :key="item.ID"
-                class="ml-6"
+                class="item"
             >
                 <AppLink
                     :url="item.url"
                     :target="item.target"
-                    class="font-semibold"
+                    class="link uppercase"
                 >
                     {{ item.title }}
                 </AppLink>
@@ -29,4 +29,10 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+.link {
+    letter-spacing: 2.8px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 38px;
+}
 </style>
