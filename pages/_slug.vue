@@ -20,6 +20,27 @@
                 v-if="module.acf_fc_layout === 'products'"
                 :key="index"
             />
+            <section
+                v-if="module.acf_fc_layout === 'two_column'"
+                :key="index"
+                class="twoColumnSection"
+            >
+                <div class="container">
+                    <TwoColumn>
+                        <div
+                            slot="left"
+                            class="content"
+                            v-html="module.left_column"
+                        ></div>
+                        <div
+                            v-if="module.right_column"
+                            slot="right"
+                            class="content"
+                            v-html="module.right_column"
+                        ></div>
+                    </TwoColumn>
+                </div>
+            </section>
         </template>
     </div>
 </template>
@@ -29,6 +50,7 @@ import TopSection from '../components/ui/TopSection.vue';
 import PreambleImage from '../components/ui/PreambleImage.vue';
 import Accordions from '../components/Accordions.vue';
 import Products from '../components/Products.vue';
+import TwoColumn from '../components/ui/TwoColumn.vue';
 import { getMeta, updatePage } from '../utils/helpers';
 
 export default {
@@ -37,6 +59,7 @@ export default {
         PreambleImage,
         Accordions,
         Products,
+        TwoColumn,
     },
     head() {
         return getMeta(this.page.yoast);

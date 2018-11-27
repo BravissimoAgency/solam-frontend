@@ -13,6 +13,7 @@
                         v-html="accordion.left_column"
                     ></div>
                     <div
+                        v-if="accordion.right_column"
                         slot="right"
                         class="content"
                         v-html="accordion.right_column"
