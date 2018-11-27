@@ -21,6 +21,7 @@
                 >
                     <img
                         :src="getIcon(row.icon)"
+                        :class="row.icon"
                         class="icon"
                     >
                     <h4 class="heading">{{ row.title }}</h4>
@@ -63,11 +64,11 @@ export default {
     margin-bottom: 74px;
     overflow: hidden;
 }
-.left,
-.right {
-    width: 50%;
+.left {
+    width: 57%;
 }
 .right {
+    width: 43%;
     padding-left: 94px;
     position: relative;
 }
@@ -75,15 +76,16 @@ export default {
     background-color: #f2f6f8;
     position: relative;
     z-index: 2;
-    padding: 100px;
+    padding: 125px 0;
+    margin-left: -2px;
 }
 .right::before {
     content: '';
     background-color: #f2f6f8;
-    transform: skew(-10deg);
+    transform: skew(-7deg);
     position: absolute;
     top: 0;
-    left: -18px;
+    left: -41px;
     height: 100%;
     width: 100%;
 }
@@ -93,17 +95,35 @@ export default {
     padding-right: 62px;
     margin-left: auto;
     max-width: 100%;
+    margin-right: 133px;
 }
 .preamble {
     margin-bottom: 80px;
 }
 .row {
-    margin-bottom: 40px;
+    margin-bottom: 36px;
+    max-width: 380px;
 }
 .icon {
-    width: 72px;
+    width: 68px;
     height: auto;
-    margin-bottom: 15px;
+    margin-bottom: 22px;
+}
+.icon.products {
+    width: 68px;
+    height: 46px;
+}
+.icon.applications {
+    width: 66px;
+    height: 63px;
+}
+.icon.potatoes {
+    width: 72px;
+    height: 43px;
+}
+.icon.earth {
+    width: 62px;
+    height: 60px;
 }
 .heading {
     font-weight: 600;
@@ -112,5 +132,8 @@ export default {
     color: var(--primaryColor);
     text-transform: uppercase;
     margin-bottom: 6px;
+}
+.companyInfo >>> .appImage {
+    height: 423px;
 }
 </style>
