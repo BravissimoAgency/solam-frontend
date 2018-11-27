@@ -87,4 +87,7 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+.twoColumnSection {
+    margin-bottom: 80px;
+}
 </style>

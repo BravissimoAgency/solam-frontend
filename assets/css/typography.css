@@ -89,3 +89,26 @@ p {
         }
     }
 }
+
+.content p {
+    margin-bottom: 26px;
+}
+
+.content h2 {
+    position: relative;
+    color: var(--primaryColor);
+    margin-bottom: 30px;
+    margin-left: -5px;
+    &::after {
+        content: '';
+        position: absolute;
+        left: -41px;
+        top: -4px;
+        width: 7px;
+        height: 68px;
+        background-color: var(--secondaryColor);
+        display: inline-block;
+        transform: skew(-9deg);
+        margin-left: 2px;
+    }
+}
