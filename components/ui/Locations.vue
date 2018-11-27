@@ -5,10 +5,37 @@
             :key="index"
             class="location"
         >
-            <h3>{{ location.name }}</h3>
-            <p v-html="location.address"></p>
-            <p>{{ location.phone }}</p>
-            <p v-if="location.fax">{{ location.fax }}</p>
+            <div class="row">
+                <img
+                    class="icon"
+                    src="../../assets/images/icon-address.svg"
+                >
+                <div class="text">
+                    <h3 class="heading">{{ location.name }}</h3>
+                    <p v-html="location.address"></p>
+                </div>
+            </div>
+            <div class="row">
+                <img
+                    class="icon"
+                    src="../../assets/images/icon-tel.svg"
+                >
+                <p class="text">
+                    Tel. <a :href="`tel:${location.phone}`">{{ location.phone }}</a>
+                </p>
+            </div>
+            <div
+                v-if="location.fax"
+                class="row"
+            >
+                <img
+                    class="icon"
+                    src="../../assets/images/icon-fax.svg"
+                >
+                <p class="text">
+                    Fax. {{ location.fax }}
+                </p>
+            </div>
         </div>
     </div>
 </template>
@@ -25,5 +52,36 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-
+.row {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 6px;
+    &:first-child {
+        margin-bottom: 20px;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+.icon {
+    width: 22px;
+    margin-top: 3px;
+}
+.text {
+    width: calc(100% - 22px);
+    padding-left: 28px;
+    line-height: 1.63;
+    font-size: 16px;
+}
+.heading {
+    color: var(--primaryColor);
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    font-weight: 600;
+    font-size: 16px;
+}
+a:hover {
+    color: var(--primaryColor);
+}
 </style>

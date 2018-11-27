@@ -71,8 +71,12 @@ export default {
 .halfContainer {
     width: 602px;
     margin-top: -5px;
-    padding-right: 62px;
+    padding-right: 40px;
     margin-left: auto;
     max-width: 100%;
+}
+.preamble {
+    padding-right: 22px;
+    margin-bottom: 77px;
 }
 </style>
