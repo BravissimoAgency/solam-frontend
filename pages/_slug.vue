@@ -46,6 +46,10 @@
                 :key="index"
                 :ids="module.shortcuts"
             />
+            <Applications
+                v-if="module.acf_fc_layout === 'applications'"
+                :key="index"
+            />
         </template>
     </div>
 </template>
@@ -57,6 +61,7 @@ import Accordions from '../components/Accordions.vue';
 import Products from '../components/Products.vue';
 import TwoColumn from '../components/ui/TwoColumn.vue';
 import Shortcuts from '../components/Shortcuts.vue';
+import Applications from '../components/Applications.vue';
 import { getMeta, updatePage } from '../utils/helpers';
 
 export default {
@@ -67,6 +72,7 @@ export default {
         Products,
         TwoColumn,
         Shortcuts,
+        Applications,
     },
     head() {
         return getMeta(this.page.yoast);

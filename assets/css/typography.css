@@ -78,7 +78,6 @@ p {
     & li {
         position: relative;
         padding-left: 20px;
-        margin-bottom: 30px;
         &::before {
             content: "•";
             position: absolute;
