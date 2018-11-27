@@ -33,7 +33,7 @@ export default {
 
 <style lang="postcss" scoped>
 .preambleImage {
-    margin-bottom: 60px;
+    margin-bottom: 74px;
 }
 .left,
 .right {

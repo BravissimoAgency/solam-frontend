@@ -7,6 +7,7 @@
             class="header"
             @click="toggle()"
         >
+            <span class="line"></span>
             <h3 class="title">{{ title }}</h3>
             <button
                 type="button"
@@ -89,7 +90,7 @@ export default {
 
 <style lang="postcss" scoped>
 :root {
-    --buttonSize: 28px;
+    --buttonSize: 40px;
 }
 .accordion {
     margin-bottom: 30px;
@@ -100,20 +101,32 @@ export default {
 .header {
     cursor: pointer;
     position: relative;
-    padding-right: 125px;
-    border-bottom: 2px solid #e8e8e8;
-    padding-bottom: 13px;
+    padding-right: 170px;
+    border-bottom: 8px solid #F2F6F8;
+    padding-bottom: 30px;
     transition: 0.35s;
+    display: flex;
+    align-items: center;
+}
+.line {
+    width: 3px;
+    height: 25px;
+    background-color: var(--secondaryColor);
+    display: inline-block;
+    transform: skew(-9deg);
+    margin-left: 2px;
 }
 .title {
-    font-size: 22px;
+    font-weight: normal;
+    color: var(--primaryColor);
     margin: 0;
+    padding-left: 30px;
 }
 .button {
     position: absolute;
     width: auto;
     right: 0;
-    top: 1px;
+    top: 3px;
 }
 .buttonInner {
     display: flex;
@@ -121,17 +134,19 @@ export default {
 }
 .buttonTextHolder {
     position: relative;
-    width: 120px;
+    width: 150px;
     height: 24px;
-    color: #8b8b8b;
-    font-size: 16px;
-    line-height: 1.5;
 }
 .buttonText {
     position: absolute;
     right: 20px;
     top: 0;
     transition: 0.35s;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 2.4px;
+    color: var(--primaryColor);
+    text-transform: uppercase;
 }
 .buttonText--close {
     opacity: 0;
@@ -164,9 +179,6 @@ export default {
 }
 
 .accordion.isOpen {
-    & .header {
-        border-color: var(--primaryColor);
-    }
     & .buttonIcon {
         transform: rotate(45deg);
     }
