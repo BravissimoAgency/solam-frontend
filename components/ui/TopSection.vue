@@ -7,7 +7,7 @@
         />
         <div class="overlay ab100"></div>
         <div class="container flex items-end h-full relative">
-            <h1>{{ topSection.heading }}</h1>
+            <h1 class="heading">{{ topSection.heading }}</h1>
         </div>
     </section>
 </template>
@@ -25,13 +25,27 @@ export default {
 
 <style lang="postcss" scoped>
 .topSection {
-    padding: 90px 0;
-    margin-bottom: 80px;
-    height: 500px;
+    padding: 75px 0;
+    margin-bottom: 84px;
+    height: 508px;
     color: #fff;
 }
 .overlay {
     background-color: var(--primaryColor);
     opacity: 0.8;
+}
+.heading {
+    margin-left: -6px;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 16px;
+        left: -88px;
+        width: 28px;
+        height: 286px;
+        transform: skew(-9deg);
+        background-color: var(--secondaryColor);
+    }
 }
 </style>

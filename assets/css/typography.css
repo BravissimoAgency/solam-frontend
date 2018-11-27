@@ -38,13 +38,14 @@ h4,
 p {
     line-height: 1.75;
     margin: 0;
-    margin-bottom: 20px;
+    margin-bottom: 32px;
     &:last-child {
         margin-bottom: 0;
     }
 }
 
-.preamble {
+.preamble,
+.preamble p {
     font-size: 20px;
     line-height: 1.6;
     @media (--tablet) {
@@ -55,13 +56,15 @@ p {
     }
 }
 
-.content {
-    & a {
-        color: var(--primaryColor);
-        &:hover {
-            color: var(--secondaryColor);
-        }
+.preamble a,
+.content a {
+    color: var(--primaryColor);
+    &:hover {
+        color: var(--secondaryColor);
     }
+}
+
+.content {
     & ul,
     & ol {
         list-style: none;
