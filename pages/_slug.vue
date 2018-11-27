@@ -41,6 +41,11 @@
                     </TwoColumn>
                 </div>
             </section>
+            <Shortcuts
+                v-if="module.acf_fc_layout === 'shortcuts'"
+                :key="index"
+                :ids="module.shortcuts"
+            />
         </template>
     </div>
 </template>
@@ -51,6 +56,7 @@ import PreambleImage from '../components/ui/PreambleImage.vue';
 import Accordions from '../components/Accordions.vue';
 import Products from '../components/Products.vue';
 import TwoColumn from '../components/ui/TwoColumn.vue';
+import Shortcuts from '../components/Shortcuts.vue';
 import { getMeta, updatePage } from '../utils/helpers';
 
 export default {
@@ -60,6 +66,7 @@ export default {
         Accordions,
         Products,
         TwoColumn,
+        Shortcuts,
     },
     head() {
         return getMeta(this.page.yoast);
