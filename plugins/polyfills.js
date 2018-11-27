@@ -3,6 +3,8 @@ import objectFitImages from 'object-fit-images';
 
 objectFitImages();
 
+require('intersection-observer');
+
 if (!Array.prototype.find) {
     Object.defineProperty(Array.prototype, 'find', {
         value: function(predicate) {
@@ -48,3 +50,16 @@ if (!Array.prototype.find) {
         writable: true,
     });
 }
+
+if (!Object.entries) {
+    Object.entries = function( obj ){
+      var ownProps = Object.keys( obj ),
+          i = ownProps.length,
+          resArray = new Array(i); // preallocate the Array
+      while (i--)
+        resArray[i] = [ownProps[i], obj[ownProps[i]]];
+  
+      return resArray;
+    };
+  }
+  
