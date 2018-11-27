@@ -50,6 +50,10 @@
                 v-if="module.acf_fc_layout === 'applications'"
                 :key="index"
             />
+            <ContactSection
+                v-if="module.acf_fc_layout === 'contact_info'"
+                :key="index"
+            />
         </template>
     </div>
 </template>
@@ -62,6 +66,7 @@ import Products from '../components/Products.vue';
 import TwoColumn from '../components/ui/TwoColumn.vue';
 import Shortcuts from '../components/Shortcuts.vue';
 import Applications from '../components/Applications.vue';
+import ContactSection from '../components/ContactSection.vue';
 import { getMeta, updatePage } from '../utils/helpers';
 
 export default {
@@ -73,6 +78,7 @@ export default {
         TwoColumn,
         Shortcuts,
         Applications,
+        ContactSection,
     },
     head() {
         return getMeta(this.page.yoast);
