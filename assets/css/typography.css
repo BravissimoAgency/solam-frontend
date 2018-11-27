@@ -77,14 +77,15 @@ p {
     }
     & li {
         position: relative;
-        padding-left: 18px;
+        padding-left: 20px;
+        margin-bottom: 30px;
         &::before {
             content: "•";
             position: absolute;
             left: 0;
             top: -2px;
             font-size: 18px;
-            color: var(--primaryColor);
+            color: var(--secondaryColor);
         }
     }
 }
