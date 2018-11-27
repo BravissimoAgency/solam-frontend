@@ -11,6 +11,15 @@
                 :key="index"
                 :preamble-image="module"
             />
+            <Accordions
+                v-if="module.acf_fc_layout === 'toggles'"
+                :key="index"
+                :accordions="module.toggles"
+            />
+            <Products
+                v-if="module.acf_fc_layout === 'products'"
+                :key="index"
+            />
         </template>
     </div>
 </template>
@@ -18,12 +27,16 @@
 <script>
 import TopSection from '../components/ui/TopSection.vue';
 import PreambleImage from '../components/ui/PreambleImage.vue';
+import Accordions from '../components/Accordions.vue';
+import Products from '../components/Products.vue';
 import { getMeta, updatePage } from '../utils/helpers';
 
 export default {
     components: {
         TopSection,
         PreambleImage,
+        Accordions,
+        Products,
     },
     head() {
         return getMeta(this.page.yoast);
