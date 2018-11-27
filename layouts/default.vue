@@ -6,15 +6,18 @@
                 <nuxt/>
             </main>
         </div>
+        <TheFooter/>
         <portal-target name="endOfPage"/>
     </div>
 </template>
 
 <script>
+import TheFooter from '../components/layout/TheFooter.vue';
 import TheHeader from '../components/layout/TheHeader.vue';
 
 export default {
     components: {
+        TheFooter,
         TheHeader,
     },
 };
