@@ -35,4 +35,8 @@ export default {
     font-weight: 600;
     margin-left: 38px;
 }
+.link:hover,
+.nuxt-link-exact-active {
+    color: var(--primaryColor);
+}
 </style>
