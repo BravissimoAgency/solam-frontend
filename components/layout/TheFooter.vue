@@ -55,13 +55,25 @@ export default {
 }
 .left {
     width: 69%;
+    @media (--smallDesktop) {
+        width: 60%;
+    }
 }
 .right {
     width: 31%;
+    @media (--smallDesktop) {
+        width: 40%;
+    }
 }
 .top {
     padding: 70px 100px;
     padding-bottom: 65px;
+    @media (--smallDesktop) {
+        padding: 60px 50px;
+    }
+    @media (--laptop) {
+        padding: 40px 30px;
+    }
 }
 .locations {
     padding-right: 56px;
@@ -76,6 +88,12 @@ export default {
     background-color: #e4eaec;
     color: #8a969c;
     font-size: 13px;
+    @media (--smallDesktop) {
+        padding: 20px 50px;
+    }
+    @media (--laptop) {
+        padding: 15px 30px;
+    }
 }
 .right {
     background-color: var(--primaryColor);
@@ -101,5 +119,13 @@ export default {
     position: absolute;
     bottom: 0;
     right: 100px;
+    @media (--smallDesktop) {
+        right: 30px;
+    }
+    @media (--laptop) {
+        width: 580px;
+        height: 471px;
+        right: 15px;
+    }
 }
 </style>
