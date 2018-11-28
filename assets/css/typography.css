@@ -26,7 +26,7 @@ h2,
 .h2 {
     font-size: 53px;
     @media (--laptop) {
-        font-size: 46px;
+        font-size: 42px;
     }
 }
 
