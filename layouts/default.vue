@@ -58,4 +58,7 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+.app {
+    overflow: hidden;
+}
 </style>
