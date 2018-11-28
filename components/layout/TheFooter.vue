@@ -70,6 +70,10 @@ export default {
     @media (--largeTablet) {
         width: 65%;
     }
+    @media (--tablet) {
+        width: 72%;
+        padding-right: 60px;
+    }
     @media (--smallTablet) {
         width: 100%;
     }
@@ -81,6 +85,9 @@ export default {
     }
     @media (--largeTablet) {
         width: 35%;
+    }
+    @media (--tablet) {
+        width: 28%;
     }
     @media (--smallTablet) {
         display: none;
@@ -135,9 +142,18 @@ export default {
     width: 100%;
     height: 100%;
     background-color: var(--primaryColor);
+    @media (--mediumTablet) {
+        left: -50px;
+    }
 }
 .content {
     margin-bottom: 40px;
+    @media (--tablet) {
+        padding-right: 60px;
+    }
+    @media (--smallTablet) {
+        padding-right: 0;
+    }
     @media (--mobile) {
         margin-bottom: 20px;
     }
@@ -158,9 +174,12 @@ export default {
         right: 15px;
     }
     @media (--largeTablet) {
-        width: 400px;
+        right: -40%;
+    }
+    @media (--tablet) {
+        width: 500px;
         height: auto;
-        right: 10px;
+        right: -30%;
     }
 }
 </style>

@@ -37,6 +37,8 @@ export default {
     @media (--tablet) {
         height: 280px;
         padding: 30px 0;
+        align-items: center;
+        justify-content: center;
     }
     @media (--mediumTablet) {
         margin-bottom: 40px;
@@ -44,6 +46,12 @@ export default {
     @media (--mobile) {
         height: 180px;
         padding: 15px 0;
+    }
+}
+.container {
+    @media (--largeTablet) {
+        align-items: center;
+        justify-content: center;
     }
 }
 .overlay {
