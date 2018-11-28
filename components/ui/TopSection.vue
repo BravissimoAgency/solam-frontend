@@ -1,7 +1,7 @@
 <template>
     <section class="topSection relative">
         <AppImage
-            :image="topSection.background_image.sizes.large"
+            :image="topSection.background_image.url"
             :alt="topSection.background_image.alt"
             :lazy="false"
             classes="ab100"
@@ -39,7 +39,7 @@ export default {
     margin-left: -6px;
     position: relative;
     &::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 16px;
         left: -88px;
