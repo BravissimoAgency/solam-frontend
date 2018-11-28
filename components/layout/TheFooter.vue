@@ -52,6 +52,9 @@ export default {
 .theFooter {
     margin-top: 240px;
     background-color: #f2f6f8;
+    @media (--laptop) {
+        margin-top: 120px;
+    }
 }
 .left {
     width: 69%;
