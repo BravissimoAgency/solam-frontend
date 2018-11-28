@@ -76,6 +76,9 @@ export default {
                 }
 
                 map.fitBounds(bounds);
+
+                const zoom = map.getZoom();
+                map.setZoom(zoom > 6 ? 6 : zoom);
             });
         });
     },
