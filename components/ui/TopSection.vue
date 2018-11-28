@@ -39,6 +39,7 @@ export default {
         padding: 30px 0;
         align-items: center;
         justify-content: center;
+        text-align: center;
     }
     @media (--mediumTablet) {
         margin-bottom: 40px;

@@ -49,7 +49,7 @@ export default {
     width: 250px;
     z-index: 40;
     overflow: auto;
-    background-color: var(--primaryColor);
+    background-color: #f2f6f8;
     opacity: 0;
     transition-delay: 0.35s;
     &.isOpen {
@@ -62,19 +62,21 @@ export default {
     padding: 0;
     padding-bottom: 30px;
     padding-top: 60px;
+    padding-left: 25px;
     @media (--mobile) {
         padding-top: 38px;
     }
 }
 
 .link {
-    color: #ffffff;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 16px;
-    padding: 12px 25px;
+    padding: 20px 25px;
     display: block;
+    border-bottom: 1px solid #ddd;
+    padding-left: 0;
     &.nuxt-link-active {
-        color: var(--secondaryColor);
+        color: var(--primaryColor);
     }
 }
 </style>
