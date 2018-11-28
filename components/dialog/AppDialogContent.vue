@@ -1,31 +1,38 @@
 <template>
     <AppDialog @close="close">
         <div class="header">
-            <h3 class="heading">{{ heading }}</h3>
+            <div class="logoHolder">
+                <Logo/>
+            </div>
             <button
-                class="close"
                 type="button"
-                @click="close">
+                class="close"
+                @click="close"
+            >
+                <span class="buttonInner flex items-center">
+                    <span class="buttonTextHolder">
+                        <span class="buttonText">Close</span>
+                    </span>
+                    <span class="buttonIcon"></span>
+                </span>
             </button>
         </div>
         <div class="body text-center">
-            <slot></slot>
+            <div class="container">
+                <slot></slot>
+            </div>
         </div>
     </AppDialog>
 </template>
 
 <script>
 import AppDialog from './AppDialog.vue';
+import Logo from '../ui/Logo.vue';
 
 export default {
     components: {
         AppDialog,
-    },
-    props: {
-        heading: {
-            type: String,
-            default: null,
-        },
+        Logo,
     },
     methods: {
         close() {
@@ -36,49 +43,74 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.header {
-    background-color: var(--primaryColor);
-    padding: 27px 30px;
-    position: relative;
-    @media (--mobile) {
-        padding: 18px 20px;
-    }
+:root {
+    --buttonSize: 40px;
 }
-.heading {
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 2.8px;
-    text-transform: uppercase;
-    padding-right: 35px;
-    margin-bottom: 0;
-    @media (--mobile) {
-        font-size: 12px;
-        letter-spacing: 1.8px;
-    }
+
+.header {
+    padding: 50px;
+    position: relative;
+    background-color: #ffffff;
+}
+.container {
+    width: 680px;
+}
+.logoHolder {
+    width: 216px;
+    height: 60px;
 }
 .close {
-    width: 18px;
-    height: 18px;
     position: absolute;
-    top: 50%;
-    right: 30px;
-    margin-top: -9px;
-    background: url("../../assets/images/icon-close.svg") no-repeat center;
-    background-size: 100%;
-    @media (--mobile) {
-        right: 20px;
-    }
+    top: 50px;
+    right: 50px;
 }
 .body {
-    padding: 50px;
+    padding: 60px 0 120px 0;
     background-color: #ffffff;
-    @media (--mobile) {
-        padding: 30px 20px;
-    }
 }
 .body >>> h2 {
     color: var(--primaryColor);
     margin-bottom: 30px;
+}
+
+.buttonTextHolder {
+    position: relative;
+    width: 160px;
+    height: 24px;
+}
+.buttonText {
+    position: absolute;
+    right: 20px;
+    top: 1px;
+    transition: 0.35s;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 2.4px;
+    color: var(--primaryColor);
+    text-transform: uppercase;
+}
+.buttonIcon {
+    display: block;
+    position: relative;
+    width: var(--buttonSize);
+    height: var(--buttonSize);
+    border: 2px solid var(--primaryColor);
+    border-radius: 100%;
+    transition: 0.35s;
+    transform: rotate(45deg);
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        width: 18px;
+        height: 2px;
+        left: 50%;
+        top: 50%;
+        background-color: var(--primaryColor);
+        margin: -1px 0 0 -9px;
+    }
+    &::after {
+        transform: rotate(90deg);
+    }
 }
 </style>

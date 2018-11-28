@@ -79,7 +79,7 @@ export default {
     max-height: 100%;
 }
 .holder {
-    width: 720px;
+    width: 980px;
     margin: 0 auto;
     max-width: 100%;
 }
