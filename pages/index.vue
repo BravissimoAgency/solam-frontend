@@ -67,8 +67,7 @@ export default {
 
 <style lang="postcss" scoped>
 .frontpage {
-    background-color: var(--primaryColor);
-    height: calc(100vh - 120px);
+    min-height: calc(100vh - 120px);
 }
 .left {
     top: -120px;
@@ -79,6 +78,7 @@ export default {
     width: 55%;
     min-height: 100vh;
     margin-left: -120px;
+    margin-bottom: -120px;
     overflow: hidden;
 }
 .top {
@@ -108,7 +108,7 @@ export default {
 }
 .imageHolder {
     width: 60%;
-    height: 100%;
+    height: calc(100% - 120px);
     position: absolute;
     top: 0;
     right: 0;
