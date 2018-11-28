@@ -3,13 +3,15 @@
         <div class="inner flex">
             <div class="left">
                 <div class="top">
-                    <div
-                        class="content"
-                        v-html="options.contact_text"
-                    ></div>
-                    <Locations
-                        :locations="options.locations"
-                    />
+                    <div class="container">
+                        <div
+                            class="content"
+                            v-html="options.contact_text"
+                        ></div>
+                        <Locations
+                            :locations="options.locations"
+                        />
+                    </div>
                 </div>
                 <div class="bottom">
                     Website produced by
@@ -49,18 +51,29 @@ export default {
 <style lang="postcss" scoped>
 .theFooter {
     margin-top: 240px;
-    background-color: #F2F6F8;
+    background-color: #f2f6f8;
 }
-.left,
+.left {
+    width: 69%;
+}
 .right {
-    width: 50%;
+    width: 31%;
 }
 .top {
-    padding: 60px 100px;
+    padding: 70px 100px;
+    padding-bottom: 65px;
+}
+.locations {
+    padding-right: 56px;
+}
+.container {
+    padding: 0;
+    width: 670px;
+    margin: 0;
 }
 .bottom {
-    padding: 20px 100px;
-    background-color: #E4EAEC;
+    padding: 23px 100px;
+    background-color: #e4eaec;
     color: #8a969c;
     font-size: 13px;
 }
@@ -68,14 +81,25 @@ export default {
     background-color: var(--primaryColor);
     position: relative;
 }
+.right::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -39px;
+    transform: skew(-7deg);
+    width: 100%;
+    height: 100%;
+    background-color: var(--primaryColor);
+}
 .content {
     margin-bottom: 40px;
 }
 .theFooter >>> .footerImage {
     width: 749px;
     height: 608px;
+    max-width: none;
     position: absolute;
     bottom: 0;
-    left: 0;
+    right: 100px;
 }
 </style>
