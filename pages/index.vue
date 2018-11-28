@@ -7,16 +7,18 @@
                 </div>
             </div>
             <div class="inner">
-                <h1 class="heading">{{ page.heading }}</h1>
-                <div
-                    class="preamble"
-                    v-html="page.preamble"
-                ></div>
-                <AppButton
-                    :url="page.button.url"
-                    :target="page.button.target"
-                    label="Read more"
-                />
+                <div class="textHolder">
+                    <h1 class="heading">{{ page.heading }}</h1>
+                    <div
+                        class="preamble"
+                        v-html="page.preamble"
+                    ></div>
+                    <AppButton
+                        :url="page.button.url"
+                        :target="page.button.target"
+                        label="Read more"
+                    />
+                </div>
             </div>
         </div>
         <div class="imageHolder relative">
@@ -92,6 +94,11 @@ export default {
     padding: 179px 216px;
     padding-right: 200px;
     transform: skew(7deg);
+}
+.textHolder {
+    width: 640px;
+    max-width: 100%;
+    margin: 0 auto;
 }
 .heading {
     margin-bottom: 36px;
