@@ -61,7 +61,7 @@ export default {
 
 <style lang="postcss" scoped>
 .companyInfo {
-    margin-bottom: 74px;
+    margin-bottom: 90px;
     overflow: hidden;
 }
 .left {
@@ -80,7 +80,7 @@ export default {
     margin-left: -2px;
 }
 .right::before {
-    content: '';
+    content: "";
     background-color: #f2f6f8;
     transform: skew(-7deg);
     position: absolute;

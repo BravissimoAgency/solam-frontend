@@ -49,6 +49,6 @@ export default {
 
 <style lang="postcss" scoped>
 .accordions {
-    margin-bottom: 80px;
+    margin-bottom: 90px;
 }
 </style>

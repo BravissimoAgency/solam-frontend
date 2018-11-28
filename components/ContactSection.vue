@@ -47,7 +47,7 @@ export default {
 
 <style lang="postcss" scoped>
 .contactSection {
-    margin-bottom: 74px;
+    margin-bottom: 120px;
 }
 .left,
 .right {
@@ -58,7 +58,7 @@ export default {
     position: relative;
     line-height: 0;
     &::after {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 57px;
