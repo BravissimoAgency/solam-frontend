@@ -114,6 +114,10 @@ export default {
         padding: 13px 20px;
         min-width: 180px;
     }
+    @media (--mobile) {
+        padding: 10px 15px;
+        min-width: 134px;
+    }
     &.isDisabled {
         cursor: default;
         opacity: 0.6;
@@ -135,6 +139,10 @@ export default {
     font-weight: 700;
     letter-spacing: 2.8px;
     text-transform: uppercase;
+    @media (--mobile) {
+        font-size: 12px;
+        letter-spacing: 2.2px;
+    }
 }
 .icon {
     width: 24px;
