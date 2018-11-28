@@ -63,6 +63,9 @@ export default {
 .companyInfo {
     margin-bottom: 90px;
     overflow: hidden;
+    @media (--mobile) {
+        margin-bottom: 40px;
+    }
 }
 .left {
     width: 57%;
@@ -80,6 +83,7 @@ export default {
     }
     @media (--mediumTablet) {
         width: 100%;
+        padding-left: 0;
     }
 }
 .rightInner {
@@ -92,6 +96,9 @@ export default {
         padding: 60px 20px;
         margin-left: 0;
     }
+    @media (--mediumTablet) {
+        padding: 30px;
+    }
 }
 .right::before {
     content: "";
@@ -102,6 +109,9 @@ export default {
     left: -41px;
     height: 100%;
     width: 100%;
+    @media (--mediumTablet) {
+        display: none;
+    }
 }
 .halfContainer {
     width: 682px;
@@ -111,34 +121,67 @@ export default {
     margin-left: auto;
     max-width: 100%;
     margin-right: 133px;
+    @media (--mediumTablet) {
+        margin: 0;
+        padding: 0 30px;
+    }
+    @media (--mobile) {
+        margin: 0;
+        padding: 0 15px;
+    }
 }
 .preamble {
     margin-bottom: 80px;
+    @media (--mediumTablet) {
+        margin-bottom: 40px;
+    }
 }
 .row {
     margin-bottom: 36px;
     max-width: 380px;
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
 .icon {
     width: 68px;
     height: auto;
     margin-bottom: 22px;
+    @media (--mobile) {
+        margin-bottom: 15px;
+    }
 }
 .icon.products {
     width: 68px;
     height: 46px;
+    @media (--mobile) {
+        width: calc(68px * 0.75);
+        height: calc(46px * 0.75);
+    }
 }
 .icon.applications {
     width: 66px;
     height: 63px;
+    @media (--mobile) {
+        width: calc(66px * 0.75);
+        height: calc(63px * 0.75);
+    }
 }
 .icon.potatoes {
     width: 72px;
     height: 43px;
+    @media (--mobile) {
+        width: calc(72px * 0.75);
+        height: calc(43px * 0.75);
+    }
 }
 .icon.earth {
     width: 62px;
     height: 60px;
+    @media (--mobile) {
+        width: calc(62px * 0.75);
+        height: calc(60px * 0.75);
+    }
 }
 .heading {
     font-weight: 600;
@@ -147,8 +190,20 @@ export default {
     color: var(--primaryColor);
     text-transform: uppercase;
     margin-bottom: 6px;
+    @media (--mobile) {
+        font-size: 15px;
+    }
 }
 .companyInfo >>> .appImage {
     height: 423px;
+    @media (--laptop) {
+        height: 350px;
+    }
+    @media (--mediumTablet) {
+        height: 300px;
+    }
+    @media (--mobile) {
+        height: 220px;
+    }
 }
 </style>

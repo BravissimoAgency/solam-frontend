@@ -115,5 +115,8 @@ export default {
 <style lang="postcss" scoped>
 .twoColumnSection {
     margin-bottom: 80px;
+    @media (--mobile) {
+        margin-bottom: 40px;
+    }
 }
 </style>

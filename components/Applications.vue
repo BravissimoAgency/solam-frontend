@@ -43,6 +43,9 @@ export default {
     @media (--laptop) {
         padding: 0 50px;
     }
+    @media (--largeTablet) {
+        padding: 0 15px;
+    }
 }
 .application {
     padding-bottom: 80px;
@@ -52,6 +55,11 @@ export default {
         padding-bottom: 60px;
         margin-bottom: 60px;
         border-bottom: 6px solid #f2f6f8;
+    }
+    @media (--mobile) {
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        border-bottom: 4px solid #f2f6f8;
     }
     &:last-child {
         padding-bottom: 0;

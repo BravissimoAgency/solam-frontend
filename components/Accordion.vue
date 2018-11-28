@@ -127,6 +127,9 @@ export default {
     @media (--laptop) {
         border-bottom: 6px solid #f2f6f8;
     }
+    @media (--mobile) {
+        border-bottom: 4px solid #f2f6f8;
+    }
 }
 .logoHolder {
     width: 126px;
@@ -167,6 +170,9 @@ export default {
     position: relative;
     width: 150px;
     height: 24px;
+    @media (--mobile) {
+        display: none;
+    }
 }
 .buttonText {
     position: absolute;

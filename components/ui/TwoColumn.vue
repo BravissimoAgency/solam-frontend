@@ -22,6 +22,9 @@
         margin-left: calc(var(--smallGutter) * -1);
         margin-right: calc(var(--smallGutter) * -1);
     }
+    @media (--mediumTablet) {
+        margin: 0;
+    }
 }
 .column {
     padding: 0 var(--gutter);
@@ -34,6 +37,9 @@
         &:first-child {
             margin-bottom: 30px;
         }
+    }
+    @media (--mediumTablet) {
+        padding: 0;
     }
 }
 </style>

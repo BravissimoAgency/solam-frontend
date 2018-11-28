@@ -100,5 +100,8 @@ export default {
     @media (--laptop) {
         height: 400px;
     }
+    @media (--mobile) {
+        height: 250px;
+    }
 }
 </style>

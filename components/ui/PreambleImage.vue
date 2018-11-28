@@ -1,5 +1,5 @@
 <template>
-    <section class="preambleImage flex">
+    <section class="preambleImage flex flex-wrap">
         <div class="left">
             <div class="halfContainer">
                 <div
@@ -54,6 +54,9 @@ export default {
     @media (--laptop) {
         padding-left: 40px;
     }
+    @media (--mediumTablet) {
+        padding-left: 0;
+    }
     &::after {
         content: "";
         position: absolute;
@@ -63,19 +66,35 @@ export default {
         height: 100%;
         transform: skew(-7deg);
         background-color: #fff;
+        @media (--mediumTablet) {
+            display: none;
+        }
     }
 }
 .halfContainer {
-    width: 602px;
+    width: 632px;
     margin-top: -5px;
+    padding-left: 30px;
     padding-right: 62px;
     margin-left: auto;
     max-width: 100%;
+    @media (--mediumTablet) {
+        padding: 0 30px;
+    }
+    @media (--mobile) {
+        padding: 0 15px;
+    }
 }
 .preambleImage >>> .appImage {
     height: 462px;
     @media (--laptop) {
         height: 350px;
+    }
+    @media (--mediumTablet) {
+        height: 300px;
+    }
+    @media (--mobile) {
+        height: 220px;
     }
 }
 </style>

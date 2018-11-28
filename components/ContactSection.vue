@@ -51,6 +51,9 @@ export default {
     @media (--laptop) {
         margin-bottom: 80px;
     }
+    @media (--mobile) {
+        margin-bottom: 40px;
+    }
 }
 .left,
 .right {
@@ -71,6 +74,9 @@ export default {
     @media (--laptop) {
         padding-left: 40px;
     }
+    @media (--mediumTablet) {
+        padding-left: 0;
+    }
     &::after {
         content: "";
         position: absolute;
@@ -80,17 +86,31 @@ export default {
         height: 100%;
         transform: skew(-7deg);
         background-color: #fff;
+        @media (--mediumTablet) {
+            display: none;
+        }
     }
 }
 .halfContainer {
-    width: 602px;
+    width: 632px;
     margin-top: -5px;
     padding-right: 40px;
     margin-left: auto;
     max-width: 100%;
+    padding-left: 30px;
+    @media (--mediumTablet) {
+        padding: 0 30px;
+    }
+    @media (--mobile) {
+        padding: 0 15px;
+    }
 }
 .preamble {
     padding-right: 22px;
     margin-bottom: 77px;
+    @media (--mediumTablet) {
+        margin-bottom: 40px;
+        padding-right: 0;
+    }
 }
 </style>

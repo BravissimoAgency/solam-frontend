@@ -52,6 +52,14 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+.location {
+    @media (--mediumTablet) {
+        width: 100%;
+        &:first-child {
+            margin-bottom: 30px;
+        }
+    }
+}
 .row {
     width: 100%;
     display: flex;

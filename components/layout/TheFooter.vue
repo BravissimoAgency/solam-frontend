@@ -55,6 +55,9 @@ export default {
     @media (--laptop) {
         margin-top: 120px;
     }
+    @media (--mobile) {
+        margin-top: 40px;
+    }
 }
 .left {
     width: 69%;
