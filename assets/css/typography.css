@@ -121,5 +121,11 @@ p {
         display: inline-block;
         transform: skew(-9deg);
         margin-left: 2px;
+        @media (--laptop) {
+            width: 5px;
+            height: 60px;
+            transform: skew(-8deg);
+            left: -26px;
+        }
     }
 }

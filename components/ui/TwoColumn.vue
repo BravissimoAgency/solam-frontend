@@ -12,7 +12,7 @@
 <style lang="postcss" scoped>
 :root {
     --gutter: 70px;
-    --smallGutter: 25px;
+    --smallGutter: 35px;
 }
 
 .twoColumn {
