@@ -17,17 +17,26 @@ h1,
 .h1 {
     font-size: 70px;
     line-height: 1.19;
+    @media (--laptop) {
+        font-size: 56px;
+    }
 }
 
 h2,
 .h2 {
     font-size: 53px;
+    @media (--laptop) {
+        font-size: 46px;
+    }
 }
 
 h3,
 .h3 {
     font-size: 34px;
     line-height: 1.25;
+    @media (--laptop) {
+        font-size: 30px;
+    }
 }
 
 h4,
@@ -99,7 +108,7 @@ p {
     margin-bottom: 30px;
     margin-left: -5px;
     &::after {
-        content: '';
+        content: "";
         position: absolute;
         left: -41px;
         top: -4px;

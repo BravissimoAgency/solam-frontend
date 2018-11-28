@@ -90,8 +90,9 @@ export default {
     width: 100%;
 }
 .halfContainer {
-    width: 602px;
+    width: 682px;
     margin-top: -5px;
+    padding-left: 80px;
     padding-right: 62px;
     margin-left: auto;
     max-width: 100%;

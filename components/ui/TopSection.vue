@@ -30,6 +30,10 @@ export default {
     margin-bottom: 84px;
     height: 508px;
     color: #fff;
+    @media (--laptop) {
+        height: 350px;
+        padding: 40px 0;
+    }
 }
 .overlay {
     background-color: var(--primaryColor);
@@ -47,6 +51,12 @@ export default {
         height: 286px;
         transform: skew(-9deg);
         background-color: var(--secondaryColor);
+        @media (--laptop) {
+            left: -44px;
+            width: 20px;
+            height: 200px;
+            transform: skew(-8deg);
+        }
     }
 }
 </style>

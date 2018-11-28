@@ -34,6 +34,9 @@ export default {
     font-size: 14px;
     font-weight: 600;
     margin-left: 38px;
+    @media (--laptop) {
+        margin-left: 32px;
+    }
 }
 .link:hover,
 .nuxt-link-exact-active {

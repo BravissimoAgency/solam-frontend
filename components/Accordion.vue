@@ -119,7 +119,7 @@ export default {
     cursor: pointer;
     position: relative;
     padding-right: 170px;
-    border-bottom: 8px solid #F2F6F8;
+    border-bottom: 8px solid #f2f6f8;
     padding-bottom: 30px;
     transition: 0.35s;
     display: flex;
@@ -168,7 +168,7 @@ export default {
 .buttonText {
     position: absolute;
     right: 20px;
-    top: 0;
+    top: 4px;
     transition: 0.35s;
     font-size: 16px;
     font-weight: 600;

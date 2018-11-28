@@ -63,5 +63,8 @@ export default {
 }
 .preambleImage >>> .appImage {
     height: 462px;
+    @media (--laptop) {
+        height: 300px;
+    }
 }
 </style>

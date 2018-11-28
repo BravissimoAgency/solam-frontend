@@ -27,8 +27,15 @@ export default {
 .logoHolder {
     width: 216px;
     height: 60px;
+    @media (--laptop) {
+        width: 150px;
+        height: 42px;
+    }
 }
 .inner {
     padding: 30px 50px;
+    @media (--laptop) {
+        padding: 24px 30px;
+    }
 }
 </style>

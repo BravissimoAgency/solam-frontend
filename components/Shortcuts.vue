@@ -52,6 +52,9 @@ export default {
 .shortcuts {
     padding: 0 100px;
     margin-bottom: 80px;
+    @media (--laptop) {
+        padding: 0 30px;
+    }
 }
 .shortcut {
     width: 50%;
