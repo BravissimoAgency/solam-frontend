@@ -20,6 +20,12 @@ h1,
     @media (--laptop) {
         font-size: 56px;
     }
+    @media (--tablet) {
+        font-size: 48px;
+    }
+    @media (--mobile) {
+        font-size: 40px;
+    }
 }
 
 h2,
@@ -27,6 +33,12 @@ h2,
     font-size: 53px;
     @media (--laptop) {
         font-size: 42px;
+    }
+    @media (--tablet) {
+        font-size: 38px;
+    }
+    @media (--mobile) {
+        font-size: 32px;
     }
 }
 
@@ -37,11 +49,20 @@ h3,
     @media (--laptop) {
         font-size: 30px;
     }
+    @media (--tablet) {
+        font-size: 26px;
+    }
+    @media (--mobile) {
+        font-size: 22px;
+    }
 }
 
 h4,
 .h4 {
     font-size: 20px;
+    @media (--tablet) {
+        font-size: 18px;
+    }
 }
 
 p {

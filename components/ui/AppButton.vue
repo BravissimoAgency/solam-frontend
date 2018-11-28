@@ -110,6 +110,10 @@ export default {
     user-select: none;
     border: 2px solid #fff;
     color: #fff;
+    @media (--tablet) {
+        padding: 13px 20px;
+        min-width: 180px;
+    }
     &.isDisabled {
         cursor: default;
         opacity: 0.6;

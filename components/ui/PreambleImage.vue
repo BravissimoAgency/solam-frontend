@@ -38,6 +38,14 @@ export default {
 .left,
 .right {
     width: 50%;
+    @media (--mediumTablet) {
+        width: 100%;
+    }
+}
+.left {
+    @media (--mediumTablet) {
+        margin-bottom: 40px;
+    }
 }
 .right {
     padding-left: 94px;

@@ -34,6 +34,15 @@ export default {
         height: 350px;
         padding: 40px 0;
     }
+    @media (--tablet) {
+        height: 280px;
+        padding: 30px 0;
+    }
+    @media (--mobile) {
+        height: 180px;
+        padding: 15px 0;
+        margin-bottom: 40px;
+    }
 }
 .overlay {
     background-color: var(--primaryColor);

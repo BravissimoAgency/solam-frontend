@@ -1,5 +1,5 @@
 <template>
-    <section class="contactSection flex">
+    <section class="contactSection flex flex-wrap">
         <div class="left">
             <div class="halfContainer">
                 <div
@@ -55,6 +55,14 @@ export default {
 .left,
 .right {
     width: 50%;
+    @media (--mediumTablet) {
+        width: 100%;
+    }
+}
+.left {
+    @media (--mediumTablet) {
+        margin-bottom: 40px;
+    }
 }
 .right {
     padding-left: 94px;

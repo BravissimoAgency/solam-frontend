@@ -66,6 +66,10 @@ export default {
 }
 .left {
     width: 57%;
+    @media (--mediumTablet) {
+        width: 100%;
+        margin-bottom: 40px;
+    }
 }
 .right {
     width: 43%;
@@ -73,6 +77,9 @@ export default {
     position: relative;
     @media (--laptop) {
         padding-left: 40px;
+    }
+    @media (--mediumTablet) {
+        width: 100%;
     }
 }
 .rightInner {
