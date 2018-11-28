@@ -68,6 +68,10 @@ export default {
     position: relative;
     width: 28px;
     height: 18px;
+    @media (--mobile) {
+        width: 24px;
+        height: 16px;
+    }
 }
 .line {
     position: absolute;

@@ -38,6 +38,10 @@ export default {
         width: 122px;
         height: 34px;
     }
+    @media (--mobile) {
+        width: 100px;
+        height: 28px;
+    }
 }
 .inner {
     padding: 30px 50px;
@@ -46,6 +50,9 @@ export default {
     }
     @media (--tablet) {
         padding: 20px 30px;
+    }
+    @media (--mobile) {
+        padding: 15px;
     }
 }
 .theNavigation {
