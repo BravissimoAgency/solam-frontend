@@ -67,11 +67,23 @@ export default {
     @media (--smallDesktop) {
         width: 60%;
     }
+    @media (--largeTablet) {
+        width: 65%;
+    }
+    @media (--smallTablet) {
+        width: 100%;
+    }
 }
 .right {
     width: 31%;
     @media (--smallDesktop) {
         width: 40%;
+    }
+    @media (--largeTablet) {
+        width: 35%;
+    }
+    @media (--smallTablet) {
+        display: none;
     }
 }
 .top {
@@ -83,9 +95,15 @@ export default {
     @media (--laptop) {
         padding: 40px 30px;
     }
+    @media (--mobile) {
+        padding: 30px 15px;
+    }
 }
 .locations {
     padding-right: 56px;
+    @media (--mobile) {
+        padding-right: 0;
+    }
 }
 .container {
     padding: 0;
@@ -120,6 +138,9 @@ export default {
 }
 .content {
     margin-bottom: 40px;
+    @media (--mobile) {
+        margin-bottom: 20px;
+    }
 }
 .theFooter >>> .footerImage {
     width: 749px;
@@ -135,6 +156,11 @@ export default {
         width: 580px;
         height: 471px;
         right: 15px;
+    }
+    @media (--largeTablet) {
+        width: 400px;
+        height: auto;
+        right: 10px;
     }
 }
 </style>

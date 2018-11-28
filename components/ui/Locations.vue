@@ -60,6 +60,7 @@ export default {
     padding-right: 30px;
     @media (--mobile) {
         width: 100%;
+        padding-right: 0;
     }
 }
 .row {
