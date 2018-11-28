@@ -80,7 +80,7 @@ export default {
     overflow: hidden;
 }
 .top {
-    padding: 31px 79px;
+    padding: 31px 106px;
     transform: skew(7deg);
 }
 .logoHolder {
