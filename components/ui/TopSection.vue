@@ -49,7 +49,7 @@ export default {
     }
 }
 .container {
-    @media (--largeTablet) {
+    @media (max-width: 1350px) {
         align-items: center;
         justify-content: center;
     }
@@ -76,7 +76,7 @@ export default {
             height: 200px;
             transform: skew(-8deg);
         }
-        @media (--largeTablet) {
+        @media (max-width: 1350px) {
             display: none;
         }
     }

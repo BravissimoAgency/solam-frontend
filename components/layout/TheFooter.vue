@@ -60,6 +60,18 @@ export default {
     }
     @media (--mobile) {
         margin-top: 40px;
+        text-align: center;
+    }
+}
+.theFooter >>> .location .icon {
+    @media (--mobile) {
+        display: none;
+    }
+}
+.theFooter >>> .location .text {
+    @media (--mobile) {
+        width: 100%;
+        padding-left: 0;
     }
 }
 .left {
@@ -76,6 +88,7 @@ export default {
     }
     @media (--smallTablet) {
         width: 100%;
+        padding-right: 0;
     }
 }
 .right {
@@ -127,6 +140,9 @@ export default {
     }
     @media (--laptop) {
         padding: 15px 30px;
+    }
+    @media (--smallTablet) {
+        text-align: center;
     }
 }
 .right {

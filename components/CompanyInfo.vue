@@ -19,11 +19,13 @@
                     :key="index"
                     class="row"
                 >
-                    <img
-                        :src="getIcon(row.icon)"
-                        :class="row.icon"
-                        class="icon"
-                    >
+                    <div class="iconHolder">
+                        <img
+                            :src="getIcon(row.icon)"
+                            :class="row.icon"
+                            class="icon"
+                        >
+                    </div>
                     <h4 class="heading">{{ row.title }}</h4>
                     <p class="text">{{ row.text }}</p>
                 </div>
@@ -74,7 +76,7 @@ export default {
     width: 57%;
     @media (--mediumTablet) {
         width: 100%;
-        margin-bottom: 40px;
+        margin-bottom: 0;
     }
 }
 .right {
@@ -101,6 +103,9 @@ export default {
     }
     @media (--mediumTablet) {
         padding: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
     }
 }
 .right::before {
@@ -149,14 +154,33 @@ export default {
     &:last-child {
         margin-bottom: 0;
     }
+    @media (--mediumTablet) {
+        width: 50%;
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    @media (--mobile) {
+        width: 100%;
+        margin-bottom: 0;
+    }
+}
+.iconHolder {
+    line-height: 0;
+    margin-bottom: 22px;
+    @media (--mediumTablet) {
+        height: 65px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    @media (--mobile) {
+        height: auto;
+        margin-bottom: 22px;
+    }
 }
 .icon {
     width: 68px;
     height: auto;
-    margin-bottom: 22px;
-    @media (--mobile) {
-        margin-bottom: 15px;
-    }
 }
 .icon.products {
     width: 68px;

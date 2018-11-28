@@ -68,6 +68,9 @@ export default {
     padding: 74px 30px;
     padding-bottom: 93px;
     @media (--mediumTablet) {
+        padding: 60px 15px;
+    }
+    @media (--mobile) {
         width: 100%;
     }
 }
@@ -82,5 +85,8 @@ export default {
 .heading {
     color: #fff;
     margin-bottom: 41px;
+    @media (--mediumTablet) {
+        margin-bottom: 30px;
+    }
 }
 </style>
