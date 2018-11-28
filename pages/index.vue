@@ -137,8 +137,10 @@ export default {
     display: flex;
     align-items: center;
     min-height: calc(100vh - 140px);
-    @media (--laptop) {
+    @media (--smallDesktop) {
         padding: 50px 160px;
+    }
+    @media (--laptop) {
         min-height: calc(100vh - 100px);
     }
     @media (--largeTablet) {
