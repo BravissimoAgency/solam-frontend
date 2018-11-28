@@ -71,16 +71,17 @@ export default {
 .left {
     top: -120px;
     background-color: var(--primaryColor);
-    transform: skew(-10deg);
+    transform: skew(-7deg);
     position: relative;
     z-index: 1;
-    width: 53%;
+    width: 55%;
     min-height: 100vh;
     margin-left: -120px;
     overflow: hidden;
 }
 .top {
-    padding: 31px 74px;
+    padding: 31px 79px;
+    transform: skew(7deg);
 }
 .logoHolder {
     width: 216px;
@@ -88,14 +89,15 @@ export default {
 }
 .inner {
     color: #fff;
-    padding: 200px;
-    transform: skew(10deg);
+    padding: 179px 216px;
+    padding-right: 200px;
+    transform: skew(7deg);
 }
 .heading {
-    margin-bottom: 40px;
+    margin-bottom: 36px;
 }
 .preamble {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 .imageHolder {
     width: 60%;
@@ -110,6 +112,7 @@ export default {
     line-height: 0;
     z-index: 2;
     position: absolute;
+    left: 19px;
     bottom: 0;
     width: 1102px;
     height: 894px;
