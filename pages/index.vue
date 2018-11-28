@@ -1,12 +1,22 @@
 <template>
     <div class="frontpage relative">
         <div class="left">
+            <div class="top">
+                <div class="logoHolder">
+                    <Logo white/>
+                </div>
+            </div>
             <div class="inner">
                 <h1 class="heading">{{ page.heading }}</h1>
                 <div
                     class="preamble"
                     v-html="page.preamble"
                 ></div>
+                <AppButton
+                    :url="page.button.url"
+                    :target="page.button.target"
+                    label="Read more"
+                />
             </div>
         </div>
         <div class="imageHolder relative">
@@ -28,10 +38,16 @@
 </template>
 
 <script>
+import AppButton from '../components/ui/AppButton.vue';
+import Logo from '../components/ui/Logo.vue';
 import page from '../static/json/-_-.json';
 import { getMeta, updatePage } from '../utils/helpers';
 
 export default {
+    components: {
+        AppButton,
+        Logo,
+    },
     head() {
         return getMeta(this.page.yoast);
     },
@@ -49,37 +65,53 @@ export default {
 
 <style lang="postcss" scoped>
 .frontpage {
-    overflow: hidden;
     background-color: var(--primaryColor);
+    height: calc(100vh - 120px);
 }
 .left {
+    top: -120px;
     background-color: var(--primaryColor);
     transform: skew(-10deg);
     position: relative;
     z-index: 1;
     width: 53%;
-    height: 100vh;
+    min-height: 100vh;
     margin-left: -120px;
+    overflow: hidden;
+}
+.top {
+    padding: 31px 74px;
+}
+.logoHolder {
+    width: 216px;
+    height: 60px;
 }
 .inner {
     color: #fff;
-    padding: 100px;
+    padding: 200px;
     transform: skew(10deg);
 }
 .heading {
     margin-bottom: 40px;
 }
+.preamble {
+    margin-bottom: 50px;
+}
 .imageHolder {
     width: 60%;
-    height: 100vh;
+    height: 100%;
     position: absolute;
     top: 0;
     right: 0;
+    line-height: 0;
+    overflow: hidden;
 }
 .girl {
     line-height: 0;
     z-index: 2;
     position: absolute;
     bottom: 0;
+    width: 1102px;
+    height: 894px;
 }
 </style>
