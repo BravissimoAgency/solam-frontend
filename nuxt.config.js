@@ -64,7 +64,6 @@ module.exports = {
         { src: '~/plugins/polyfills', ssr: false },
         '~/plugins/app-link',
         '~/plugins/app-image',
-        '~/plugins/portal-vue',
         { src: '~/plugins/vue2-google-maps', ssr: false },
         { src: '~/plugins/v-click-outside', ssr: false },
     ],
