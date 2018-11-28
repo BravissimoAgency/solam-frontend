@@ -34,6 +34,12 @@ export default {
 <style lang="postcss" scoped>
 .preambleImage {
     margin-bottom: 80px;
+    @media (--mediumTablet) {
+        margin-bottom: 60px;
+    }
+    @media (--mobile) {
+        margin-bottom: 40px;
+    }
 }
 .left,
 .right {
@@ -45,6 +51,9 @@ export default {
 .left {
     @media (--mediumTablet) {
         margin-bottom: 40px;
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 }
 .right {
@@ -61,11 +70,14 @@ export default {
         content: "";
         position: absolute;
         top: 0;
-        left: 15px;
+        left: 57px;
         width: 65px;
         height: 100%;
         transform: skew(-7deg);
         background-color: #fff;
+        @media (--laptop) {
+            left: 15px;
+        }
         @media (--mediumTablet) {
             display: none;
         }
@@ -79,6 +91,7 @@ export default {
     margin-left: auto;
     max-width: 100%;
     @media (--mediumTablet) {
+        width: 100%;
         padding: 0 30px;
     }
     @media (--mobile) {

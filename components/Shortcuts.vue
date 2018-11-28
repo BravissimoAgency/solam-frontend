@@ -55,10 +55,11 @@ export default {
     @media (--laptop) {
         padding: 0 30px;
     }
-    @media (--mobile) {
-        padding: 0 15px;
+    @media (--mediumTablet) {
+        margin-bottom: 60px;
     }
     @media (--mobile) {
+        padding: 0 15px;
         margin-bottom: 40px;
     }
 }

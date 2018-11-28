@@ -38,10 +38,12 @@ export default {
         height: 280px;
         padding: 30px 0;
     }
+    @media (--mediumTablet) {
+        margin-bottom: 40px;
+    }
     @media (--mobile) {
         height: 180px;
         padding: 15px 0;
-        margin-bottom: 40px;
     }
 }
 .overlay {
@@ -65,6 +67,9 @@ export default {
             width: 18px;
             height: 200px;
             transform: skew(-8deg);
+        }
+        @media (--largeTablet) {
+            display: none;
         }
     }
 }

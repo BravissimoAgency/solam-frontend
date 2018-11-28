@@ -50,6 +50,9 @@ export default {
 <style lang="postcss" scoped>
 .accordions {
     margin-bottom: 90px;
+    @media (--mediumTablet) {
+        margin-bottom: 60px;
+    }
     @media (--mobile) {
         margin-bottom: 40px;
     }

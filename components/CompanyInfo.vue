@@ -63,6 +63,9 @@ export default {
 .companyInfo {
     margin-bottom: 90px;
     overflow: hidden;
+    @media (--mediumTablet) {
+        margin-bottom: 60px;
+    }
     @media (--mobile) {
         margin-bottom: 40px;
     }
@@ -121,12 +124,16 @@ export default {
     margin-left: auto;
     max-width: 100%;
     margin-right: 133px;
-    @media (--mediumTablet) {
+    @media (--largeTablet) {
         margin: 0;
+        padding-left: 30px;
+        padding-right: 80px;
+    }
+    @media (--mediumTablet) {
         padding: 0 30px;
+        width: 100%;
     }
     @media (--mobile) {
-        margin: 0;
         padding: 0 15px;
     }
 }

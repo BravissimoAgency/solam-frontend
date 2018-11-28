@@ -81,11 +81,14 @@ export default {
         content: "";
         position: absolute;
         top: 0;
-        left: 15px;
+        left: 57px;
         width: 65px;
         height: 100%;
         transform: skew(-7deg);
         background-color: #fff;
+        @media (--laptop) {
+            left: 15px;
+        }
         @media (--mediumTablet) {
             display: none;
         }
@@ -100,6 +103,7 @@ export default {
     padding-left: 30px;
     @media (--mediumTablet) {
         padding: 0 30px;
+        width: 100%;
     }
     @media (--mobile) {
         padding: 0 15px;
@@ -111,6 +115,11 @@ export default {
     @media (--mediumTablet) {
         margin-bottom: 40px;
         padding-right: 0;
+    }
+}
+.locations {
+    @media (--mediumTablet) {
+        max-width: 550px;
     }
 }
 </style>

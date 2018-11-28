@@ -108,9 +108,14 @@ export default {
 <style lang="postcss" scoped>
 :root {
     --buttonSize: 40px;
+    --buttonSizeSmall: 32px;
+    --buttonSizeSmaller: 26px;
 }
 .accordion {
     margin-bottom: 30px;
+    @media (--mobile) {
+        margin-bottom: 20px;
+    }
     &:last-child {
         margin-bottom: 0;
     }
@@ -127,8 +132,15 @@ export default {
     @media (--laptop) {
         border-bottom: 6px solid #f2f6f8;
     }
+    @media (--tablet) {
+        padding-bottom: 20px;
+    }
+    @media (--mediumTablet) {
+        padding-right: 50px;
+    }
     @media (--mobile) {
         border-bottom: 4px solid #f2f6f8;
+        padding-bottom: 15px;
     }
 }
 .logoHolder {
@@ -137,6 +149,12 @@ export default {
     margin-top: 12px;
     margin-left: 6px;
     margin-right: 26px;
+    @media (--tablet) {
+        width: 100px;
+    }
+    @media (--mobile) {
+        display: none;
+    }
 }
 .line {
     width: 3px;
@@ -145,12 +163,18 @@ export default {
     display: inline-block;
     transform: skew(-9deg);
     margin-left: 2px;
+    @media (--mobile) {
+        display: none;
+    }
 }
 .title {
     font-weight: normal;
     color: var(--primaryColor);
     margin: 0;
     padding-left: 30px;
+    @media (--mobile) {
+        padding-left: 0;
+    }
 }
 .logoShown .title {
     letter-spacing: 5.2px;
@@ -161,6 +185,9 @@ export default {
     width: auto;
     right: 0;
     top: 3px;
+    @media (--mobile) {
+        top: 0;
+    }
 }
 .buttonInner {
     display: flex;
@@ -170,7 +197,7 @@ export default {
     position: relative;
     width: 150px;
     height: 24px;
-    @media (--mobile) {
+    @media (--mediumTablet) {
         display: none;
     }
 }
@@ -184,6 +211,9 @@ export default {
     letter-spacing: 2.4px;
     color: var(--primaryColor);
     text-transform: uppercase;
+    @media (--tablet) {
+        font-size: 15px;
+    }
 }
 .buttonText--close {
     opacity: 0;
@@ -196,6 +226,14 @@ export default {
     border: 2px solid var(--primaryColor);
     border-radius: 100%;
     transition: 0.35s;
+    @media (--tablet) {
+        width: var(--buttonSizeSmall);
+        height: var(--buttonSizeSmall);
+    }
+    @media (--mobile) {
+        width: var(--buttonSizeSmaller);
+        height: var(--buttonSizeSmaller);
+    }
     &::before,
     &::after {
         content: "";

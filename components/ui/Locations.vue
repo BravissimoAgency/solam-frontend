@@ -52,19 +52,20 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+.locations {
+    margin-bottom: -30px;
+}
 .location {
-    @media (--mediumTablet) {
+    margin-bottom: 30px;
+    @media (--mobile) {
         width: 100%;
-        &:first-child {
-            margin-bottom: 30px;
-        }
     }
 }
 .row {
     width: 100%;
     display: flex;
     align-items: flex-start;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     &:first-child {
         margin-bottom: 20px;
     }
@@ -75,12 +76,19 @@ export default {
 .icon {
     width: 22px;
     margin-top: 3px;
+    @media (--mobile) {
+        width: 20px;
+    }
 }
 .text {
     width: calc(100% - 22px);
     padding-left: 28px;
     line-height: 1.63;
     font-size: 16px;
+    @media (--mobile) {
+        font-size: 15px;
+        width: calc(100% - 20px);
+    }
 }
 .heading {
     color: var(--primaryColor);
@@ -88,6 +96,9 @@ export default {
     letter-spacing: 1.6px;
     font-weight: 600;
     font-size: 16px;
+    @media (--mobile) {
+        font-size: 15px;
+    }
 }
 a:hover {
     color: var(--primaryColor);
