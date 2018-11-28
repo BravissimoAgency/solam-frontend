@@ -38,4 +38,9 @@ export default {
         padding: 24px 30px;
     }
 }
+.navigationHolder {
+    @media (--tablet) {
+        display: none;
+    }
+}
 </style>

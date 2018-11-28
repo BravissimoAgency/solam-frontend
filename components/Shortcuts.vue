@@ -60,6 +60,9 @@ export default {
     width: 50%;
     padding: 74px 30px;
     padding-bottom: 93px;
+    @media (--mediumTablet) {
+        width: 100%;
+    }
 }
 .inner {
     position: relative;

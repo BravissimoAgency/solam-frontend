@@ -29,5 +29,11 @@
     @media (--laptop) {
         padding: 0 var(--smallGutter);
     }
+    @media (--mediumTablet) {
+        width: 100%;
+        &:first-child {
+            margin-bottom: 30px;
+        }
+    }
 }
 </style>
