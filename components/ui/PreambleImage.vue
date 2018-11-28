@@ -60,11 +60,13 @@ export default {
     padding-left: 94px;
     position: relative;
     line-height: 0;
+    height: 100%;
     @media (--laptop) {
         padding-left: 40px;
     }
     @media (--mediumTablet) {
         padding-left: 0;
+        height: auto;
     }
     &::after {
         content: "";

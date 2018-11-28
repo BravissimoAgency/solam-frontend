@@ -57,6 +57,7 @@ export default {
 }
 .location {
     margin-bottom: 30px;
+    padding-right: 30px;
     @media (--mobile) {
         width: 100%;
     }
