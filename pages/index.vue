@@ -114,6 +114,7 @@ export default {
     right: 0;
     line-height: 0;
     overflow: hidden;
+    background-color: #fff;
 }
 .girl {
     line-height: 0;
