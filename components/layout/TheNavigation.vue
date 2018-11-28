@@ -1,5 +1,5 @@
 <template>
-    <nav>
+    <nav class="theNavigation">
         <ul class="list-reset flex">
             <li
                 v-for="item in menu.items"

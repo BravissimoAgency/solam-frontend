@@ -6,6 +6,7 @@
             </div>
             <div class="navigationHolder flex flex-grow items-center justify-end">
                 <TheNavigation/>
+                <MenuButton/>
             </div>
         </div>
     </header>
@@ -14,11 +15,13 @@
 <script>
 import Logo from '../ui/Logo.vue';
 import TheNavigation from './TheNavigation.vue';
+import MenuButton from '../ui/MenuButton.vue';
 
 export default {
     components: {
         Logo,
         TheNavigation,
+        MenuButton,
     },
 };
 </script>
@@ -31,14 +34,21 @@ export default {
         width: 150px;
         height: 42px;
     }
+    @media (--tablet) {
+        width: 122px;
+        height: 34px;
+    }
 }
 .inner {
     padding: 30px 50px;
     @media (--laptop) {
         padding: 24px 30px;
     }
+    @media (--tablet) {
+        padding: 20px 30px;
+    }
 }
-.navigationHolder {
+.theNavigation {
     @media (--tablet) {
         display: none;
     }
