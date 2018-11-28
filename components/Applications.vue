@@ -40,11 +40,19 @@ export default {
 <style lang="postcss" scoped>
 .applications {
     padding: 0 100px;
+    @media (--laptop) {
+        padding: 0 50px;
+    }
 }
 .application {
     padding-bottom: 80px;
     margin-bottom: 80px;
-    border-bottom: 8px solid #F2F6F8;
+    border-bottom: 8px solid #f2f6f8;
+    @media (--laptop) {
+        padding-bottom: 60px;
+        margin-bottom: 60px;
+        border-bottom: 6px solid #f2f6f8;
+    }
     &:last-child {
         padding-bottom: 0;
         border-bottom: 0;

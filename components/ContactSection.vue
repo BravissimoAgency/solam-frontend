@@ -48,6 +48,9 @@ export default {
 <style lang="postcss" scoped>
 .contactSection {
     margin-bottom: 120px;
+    @media (--laptop) {
+        margin-bottom: 80px;
+    }
 }
 .left,
 .right {
@@ -57,11 +60,14 @@ export default {
     padding-left: 94px;
     position: relative;
     line-height: 0;
+    @media (--laptop) {
+        padding-left: 40px;
+    }
     &::after {
         content: "";
         position: absolute;
         top: 0;
-        left: 57px;
+        left: 15px;
         width: 65px;
         height: 100%;
         transform: skew(-7deg);

@@ -124,6 +124,9 @@ export default {
     transition: 0.35s;
     display: flex;
     align-items: center;
+    @media (--laptop) {
+        border-bottom: 6px solid #f2f6f8;
+    }
 }
 .logoHolder {
     width: 126px;

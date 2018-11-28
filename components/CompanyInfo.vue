@@ -71,6 +71,9 @@ export default {
     width: 43%;
     padding-left: 94px;
     position: relative;
+    @media (--laptop) {
+        padding-left: 40px;
+    }
 }
 .rightInner {
     background-color: #f2f6f8;
@@ -78,6 +81,10 @@ export default {
     z-index: 2;
     padding: 125px 0;
     margin-left: -2px;
+    @media (--laptop) {
+        padding: 60px 20px;
+        margin-left: 0;
+    }
 }
 .right::before {
     content: "";

@@ -52,8 +52,8 @@ export default {
         transform: skew(-9deg);
         background-color: var(--secondaryColor);
         @media (--laptop) {
-            left: -44px;
-            width: 20px;
+            left: -46px;
+            width: 18px;
             height: 200px;
             transform: skew(-8deg);
         }

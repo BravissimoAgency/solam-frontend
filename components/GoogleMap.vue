@@ -97,5 +97,8 @@ export default {
 .vue-map-container {
     width: 100%;
     height: 462px;
+    @media (--laptop) {
+        height: 400px;
+    }
 }
 </style>
