@@ -6,7 +6,10 @@
             </div>
             <div class="navigationHolder flex flex-grow items-center justify-end">
                 <TheNavigation/>
-                <MenuButton/>
+                <MenuButton
+                    :open="menuOpen"
+                    @toggle="$emit('toggleMenu')"
+                />
             </div>
         </div>
     </header>
@@ -22,6 +25,12 @@ export default {
         Logo,
         TheNavigation,
         MenuButton,
+    },
+    props: {
+        menuOpen: {
+            type: Boolean,
+            required: true,
+        },
     },
 };
 </script>

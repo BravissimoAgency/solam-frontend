@@ -1,9 +1,9 @@
 <template>
     <button
-        :class="{'isActive': menuOpen}"
+        :class="{'isActive': open}"
         class="menuButton"
         type="button"
-        @click="toggleMenu()"
+        @click="$emit('toggle')"
     >
         <div class="inner">
             <div
@@ -24,22 +24,18 @@
 <script>
 export default {
     props: {
+        open: {
+            type: Boolean,
+            default: false,
+        },
         labels: {
             type: Boolean,
             default: false,
         },
     },
-    data: () => ({
-        menuOpen: false,
-    }),
     computed: {
         label() {
-            return this.menuOpen ? 'Stäng meny' : 'Meny';
-        },
-    },
-    methods: {
-        toggleMenu() {
-            this.menuOpen = !this.menuOpen;
+            return this.open ? 'Stäng meny' : 'Meny';
         },
     },
 };
