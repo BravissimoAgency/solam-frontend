@@ -27,7 +27,7 @@ h1,
         font-size: 44px;
     }
     @media (--mobile) {
-        font-size: 38px;
+        font-size: 36px;
     }
 }
 
