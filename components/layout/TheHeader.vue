@@ -56,12 +56,13 @@ export default {
 <style lang="postcss" scoped>
 .theHeader {
     transition: 0.35s;
+    position: relative;
+    z-index: 60;
     @media (--mobile) {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        z-index: 60;
     }
     &.hasScrolled {
         @media (--mobile) {
