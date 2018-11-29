@@ -95,6 +95,9 @@ export default {
     & .line {
         transform: rotate(45deg);
         margin-top: 8px;
+        @media (--mobile) {
+            margin-top: 6px;
+        }
     }
     & .line:nth-child(2) {
         opacity: 0;
