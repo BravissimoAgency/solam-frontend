@@ -1,5 +1,8 @@
 <template>
-    <header class="bg-white">
+    <header
+        :class="{'hasScrolled': hasScrolled}"
+        class="theHeader bg-white"
+    >
         <div class="flex inner">
             <div class="logoHolder flex flex-no-shrink">
                 <Logo/>
@@ -32,10 +35,40 @@ export default {
             required: true,
         },
     },
+    data: () => ({
+        hasScrolled: false,
+    }),
+    mounted() {
+        if (!process.client) return;
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            if (scrollTop > 100) {
+                this.hasScrolled = true;
+            } else {
+                this.hasScrolled = false;
+            }
+        });
+    },
 };
 </script>
 
 <style lang="postcss" scoped>
+.theHeader {
+    transition: 0.35s;
+    @media (--mobile) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 60;
+    }
+    &.hasScrolled {
+        @media (--mobile) {
+            box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+        }
+    }
+}
 .logoHolder {
     width: 216px;
     height: 60px;

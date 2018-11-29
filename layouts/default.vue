@@ -1,13 +1,15 @@
 <template>
     <div class="app">
+        <TheHeader
+            :class="{'menuOpen': menuOpen}"
+            :menu-open="menuOpen"
+            @toggleMenu="menuOpen = !menuOpen"
+        />
         <div
             :class="{'menuOpen': menuOpen}"
             class="wrapper"
         >
-            <TheHeader
-                :menu-open="menuOpen"
-                @toggleMenu="menuOpen = !menuOpen"
-            />
+            <div class="headerPusher"></div>
             <div class="inner">
                 <main class="main">
                     <nuxt/>
@@ -72,6 +74,13 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+.headerPusher {
+    display: none;
+    @media (--mobile) {
+        display: block;
+        height: 58px;
+    }
+}
 .wrapper {
     position: relative;
     z-index: 50;
@@ -82,6 +91,9 @@ export default {
         transform: translateX(-250px);
         box-shadow: -10px 0 20px 10px rgba(0, 0, 0, 0.3);
     }
+}
+.theHeader.menuOpen {
+    transform: translateX(-250px);
 }
 .app__inner {
     position: relative;
