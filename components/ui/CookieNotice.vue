@@ -21,42 +21,42 @@
                 @click="close()"
             />
             <portal to="endOfPage">
-                <AppDialog
+                <AppDialogContent
                     v-if="termsOpen"
-                    :aria-hidden="termsOpen ? 'false' : 'true'"
-                    :content="termsText.content"
-                    :heading="termsText.heading"
-                    dialog-id="cookieinformation"
                     @close="termsOpen = false"
-                />
+                >
+                    <h2>{{ termsText[0].heading }}</h2>
+                    <div
+                        class="content"
+                        v-html="termsText[0].content"
+                    >
+                    </div>
+                </AppDialogContent>
             </portal>
         </div>
     </transition>
 </template>
 
 <script>
-import AppDialog from '../dialog/AppDialog.vue';
+import AppDialogContent from '../dialog/AppDialogContent.vue';
 import CloseAndOpenButton from './CloseAndOpenButton.vue';
 
 export default {
     components: {
-        AppDialog,
+        AppDialogContent,
         CloseAndOpenButton,
     },
-    data() {
-        return {
-            active: window.localStorage.getItem('cookieInformationAccepted') === null,
-            termsOpen: false,
-        };
-    },
-    computed: {
-        termsText() {
-            return '<p>Blablabla</p>';
-        },
-    },
+    data: () => ({
+        active: window.localStorage.getItem('cookieInformationAccepted') === null,
+        termsOpen: false,
+        termsText: [{
+            heading: 'Cookiespolicy',
+            content: 'Text för information om cookies',
+        }],
+    }),
     methods: {
         close() {
-            //  window.localStorage.setItem('cookieInformationAccepted', true);
+            window.localStorage.setItem('cookieInformationAccepted', true);
             this.active = false;
         },
     },
