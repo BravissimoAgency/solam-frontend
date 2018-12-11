@@ -30,11 +30,13 @@
                 >
                 </div>
             </AppDialogContent>
+            <CookieNotice/>
         </no-ssr>
         <ExpandedMenu
             :open="menuOpen"
             @close="menuOpen = false"
         />
+        <portal-target name="endOfPage"/>
     </div>
 </template>
 
@@ -43,6 +45,7 @@ import TheFooter from '../components/layout/TheFooter.vue';
 import TheHeader from '../components/layout/TheHeader.vue';
 import AppDialogContent from '../components/dialog/AppDialogContent.vue';
 import ExpandedMenu from '../components/ExpandedMenu.vue';
+import CookieNotice from '../components/ui/CookieNotice.vue';
 import options from '../static/json/options.json';
 
 export default {
@@ -51,6 +54,7 @@ export default {
         TheHeader,
         AppDialogContent,
         ExpandedMenu,
+        CookieNotice,
     },
     data: () => ({
         menuOpen: false,

@@ -66,6 +66,7 @@ module.exports = {
         '~/plugins/app-image',
         { src: '~/plugins/vue2-google-maps', ssr: false },
         { src: '~/plugins/v-click-outside', ssr: false },
+        '~/plugins/portal-vue',
     ],
 
     modules: [
