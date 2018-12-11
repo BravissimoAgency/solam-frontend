@@ -175,27 +175,20 @@ export default {
     }
 }
 .theFooter >>> .footerImage {
-    width: 749px;
-    height: 608px;
+    width: 1110px;
     max-width: none;
     position: absolute;
     bottom: 0;
-    right: 100px;
-    @media (--smallDesktop) {
-        right: 30px;
-    }
+    right: 0;
     @media (--laptop) {
-        width: 580px;
-        height: 471px;
-        right: 15px;
+        width: 950px;
     }
     @media (--largeTablet) {
-        right: -40%;
+        width: 1010px;
+        right: -60%;
     }
     @media (--tablet) {
-        width: 500px;
-        height: auto;
-        right: -30%;
+        display: none;
     }
 }
 </style>
