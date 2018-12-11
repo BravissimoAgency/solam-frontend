@@ -122,15 +122,15 @@ export default {
     position: relative;
     z-index: 49;
 }
-.isHome {
-    @media (--largerDesktop) {
+@media (--largerDesktop) {
+    .isHome {
         overflow: hidden;
-        & >>> .frontpage .left {
+        & >>> .left {
             transform: translateX(-100%) skew(-7deg);
             transition: 0.8s var(--cubicBezier);
         }
-        & >>> .frontpage .backgroundImage,
-        & >>> .frontpage .girl,
+        & >>> .backgroundImage,
+        & >>> .girl,
         & >>> .theHeader {
             opacity: 0;
             transition: 0.5s var(--cubicBezier) 0.6s;
@@ -138,28 +138,22 @@ export default {
         & >>> .theHeader {
             transition-delay: 0.8s;
         }
-        & >>> .frontpage .girl {
+        & >>> .girl {
             transition-delay: 1s;
         }
     }
-}
-.isHome.isLoaded {
-    @media (--largerDesktop) {
-        & >>> .frontpage .left {
+    .isHome.isLoaded {
+        & >>> .left {
             transform: translateX(-25%) skew(-7deg);
         }
-        & >>> .frontpage .backgroundImage,
-        & >>> .frontpage .girl,
+        & >>> .backgroundImage,
+        & >>> .girl,
         & >>> .theHeader {
             opacity: 1;
         }
     }
-}
-.isHome.finishAnimation {
-    @media (--largerDesktop) {
-        & >>> .frontpage .left {
-            transform: translateX(0) skew(-7deg);
-        }
+    .isHome.finishAnimation >>> .left {
+        transform: translateX(0) skew(-7deg);
     }
 }
 </style>
