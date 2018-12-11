@@ -67,6 +67,10 @@ export default {
 <style lang="postcss" scoped>
 .frontpage {
     min-height: calc(100vh - 120px);
+    @media (--largerDesktop) {
+        min-height: none;
+        height: calc(100vh - 120px);
+    }
     @media (--laptop) {
         min-height: calc(100vh - 90px);
     }
@@ -196,6 +200,9 @@ export default {
     line-height: 0;
     overflow: hidden;
     background-color: #fff;
+    @media (--largerDesktop) {
+        height: 100%;
+    }
     @media (--smallDesktop) {
         height: 100%;
     }

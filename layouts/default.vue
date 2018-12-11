@@ -91,6 +91,10 @@ export default {
     transition: transform 0.35s;
     background-color: #ffffff;
     overflow: hidden;
+    @media (--largerDesktop) {
+        overflow: visible;
+        z-index: 61;
+    }
     &.menuOpen {
         transform: translateX(-250px);
         box-shadow: -10px 0 20px 10px rgba(0, 0, 0, 0.3);

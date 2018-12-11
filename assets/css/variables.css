@@ -22,7 +22,7 @@
 /*
 // Media queries
 */
-
+@custom-media --largerDesktop (min-width: 1701px);
 @custom-media --smallDesktop (max-width: 1700px);
 @custom-media --laptop (max-width: 1450px);
 @custom-media --largeTablet (max-width: 1240px);
