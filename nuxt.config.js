@@ -79,7 +79,7 @@ module.exports = {
         [
             '@nuxtjs/google-tag-manager',
             {
-                id: 'GTM-xxx',
+                id: 'GTM-MVGKCPM',
             },
         ],
         '@/modules/generate',
