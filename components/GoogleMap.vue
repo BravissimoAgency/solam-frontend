@@ -76,6 +76,7 @@ export default {
                 }
 
                 map.fitBounds(bounds);
+                map.panBy(0, -30);
 
                 const zoom = map.getZoom();
                 map.setZoom(zoom > 6 ? 6 : zoom);
