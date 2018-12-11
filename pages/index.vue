@@ -26,7 +26,7 @@
                 :image="page.background_image.url"
                 :alt="page.background_image.alt"
                 :lazy="false"
-                classes="ab100"
+                classes="backgroundImage ab100"
             />
             <AppImage
                 :image="page.image.url"
@@ -68,7 +68,6 @@ export default {
 .frontpage {
     min-height: calc(100vh - 120px);
     @media (--largerDesktop) {
-        min-height: none;
         height: calc(100vh - 120px);
     }
     @media (--laptop) {

@@ -1,5 +1,8 @@
 <template>
-    <div class="app">
+    <div
+        :class="{'isLoaded': loaded, 'finishAnimation': lastLoad, 'isHome': $route.path === '/'}"
+        class="app"
+    >
         <TheHeader
             :class="{'menuOpen': menuOpen}"
             :menu-open="menuOpen"
@@ -60,8 +63,20 @@ export default {
         menuOpen: false,
         popupActive: false,
         options,
+        loaded: false,
+        lastLoad: false,
     }),
     mounted() {
+        if (process.client) {
+            setTimeout(() => {
+                this.loaded = true;
+                this.$nextTick(() => {
+                    setTimeout(() => {
+                        this.lastLoad = true;
+                    }, 1500);
+                });
+            }, 250);
+        }
         if (!process.client || !this.options.popup.active) return;
 
         if (window.localStorage.getItem(`popup__${this.options.popup.id}`) === null) {
@@ -106,5 +121,41 @@ export default {
 .app__inner {
     position: relative;
     z-index: 49;
+}
+.isHome {
+    & >>> .frontpage .left {
+        transform: translateX(-100%) skew(-7deg);
+        transition: 0.75s var(--cubicBezier);
+    }
+    & >>> .frontpage .backgroundImage,
+    & >>> .frontpage .girl,
+    & >>> .theHeader {
+        opacity: 0 !important;
+        transition: 0.35s var(--cubicBezier);
+    }
+    & >>> .frontpage .backgroundImage {
+        transition-delay: 0.8s;
+    }
+    & >>> .frontpage .girl {
+        transition-delay: 1s;
+    }
+    & >>> .theHeader {
+        transition-delay: 1.2s;
+    }
+}
+.isHome.isLoaded {
+    & >>> .frontpage .left {
+        transform: translateX(-25%) skew(-7deg);
+    }
+    & >>> .frontpage .backgroundImage,
+    & >>> .frontpage .girl,
+    & >>> .theHeader {
+        opacity: 1 !important;
+    }
+}
+.isHome.finishAnimation {
+    & >>> .frontpage .left {
+        transform: translateX(0) skew(-7deg);
+    }
 }
 </style>
