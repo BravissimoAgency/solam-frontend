@@ -19,18 +19,7 @@
             </div>
             <span class="line"></span>
             <h3 class="title">{{ title }}</h3>
-            <button
-                type="button"
-                class="button"
-            >
-                <span class="buttonInner">
-                    <span class="buttonTextHolder">
-                        <span class="buttonText buttonText--open">Read more</span>
-                        <span class="buttonText buttonText--close">Close</span>
-                    </span>
-                    <span class="buttonIcon"></span>
-                </span>
-            </button>
+            <CloseAndOpenButton/>
         </div>
         <transition
             @enter="slideDown"
@@ -49,10 +38,14 @@
 </template>
 
 <script>
+import CloseAndOpenButton from './ui/CloseAndOpenButton.vue';
 /* eslint-disable no-param-reassign */
 import logo from '../assets/images/logo-grey.png';
 
 export default {
+    components: {
+        CloseAndOpenButton,
+    },
     props: {
         title: {
             type: String,
@@ -106,11 +99,6 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-:root {
-    --buttonSize: 40px;
-    --buttonSizeSmall: 32px;
-    --buttonSizeSmaller: 26px;
-}
 .accordion {
     margin-bottom: 30px;
     @media (--mobile) {
@@ -180,80 +168,21 @@ export default {
     letter-spacing: 5.2px;
     text-transform: uppercase;
 }
-.button {
-    position: absolute;
-    width: auto;
-    right: 0;
-    top: 3px;
-    @media (--mobile) {
-        top: 0;
-    }
-}
-.buttonInner {
-    display: flex;
-    align-items: center;
-}
-.buttonTextHolder {
-    position: relative;
-    width: 150px;
-    height: 24px;
-    @media (--mediumTablet) {
-        display: none;
-    }
-}
-.buttonText {
-    position: absolute;
-    right: 20px;
-    top: 4px;
-    transition: 0.35s;
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 2.4px;
-    color: var(--primaryColor);
-    text-transform: uppercase;
-    @media (--tablet) {
-        font-size: 15px;
-    }
-}
-.buttonText--close {
-    opacity: 0;
-}
-.buttonIcon {
-    display: block;
-    position: relative;
-    width: var(--buttonSize);
-    height: var(--buttonSize);
-    border: 2px solid var(--primaryColor);
-    border-radius: 100%;
-    transition: 0.35s;
-    @media (--tablet) {
-        width: var(--buttonSizeSmall);
-        height: var(--buttonSizeSmall);
-    }
-    @media (--mobile) {
-        width: var(--buttonSizeSmaller);
-        height: var(--buttonSizeSmaller);
-    }
-    &::before,
-    &::after {
-        content: "";
-        position: absolute;
-        width: 12px;
-        height: 2px;
-        left: 50%;
-        top: 50%;
-        background-color: var(--primaryColor);
-        margin: -1px 0 0 -6px;
-    }
-    &::after {
-        transform: rotate(90deg);
-    }
-}
 .content {
     padding-top: 30px;
 }
-
-.accordion.isOpen {
+.accordion >>> {
+    & .closeAndOpenButton {
+        position: absolute;
+        width: auto;
+        right: 0;
+        top: 3px;
+        @media (--mobile) {
+            top: 0;
+        }
+    }
+}
+.accordion.isOpen >>> {
     & .buttonIcon {
         transform: rotate(45deg);
     }

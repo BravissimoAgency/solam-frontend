@@ -5,33 +5,27 @@
     >
         <div
             v-if="active"
-            aria-live="assertive"
-            class="cookieNotice"
+            class="cookieNotice flex justify-between items-center"
         >
             <p class="inner">
-                Vi använder cookies för att ge dig den bästa upplevelsen av vår webbplats.
-                Genom att fortsätta använda webbplatsen godkänner du detta.
+                We use cookies to give you the best experience of our site.<br>
+                By continuing to use the site you agree to this.
                 <button
-                    id="CookeNotice__ReadMore"
                     class="readMore"
                     @click="termsOpen = true"
                 >
-                    Läs mer
+                    Read more
                 </button>
             </p>
-            <button
-                class="close"
-                aria-label="Stäng notisen som visar information om cookies"
+            <CloseAndOpenButton
                 @click="close()"
-            >
-            </button>
+            />
             <portal to="endOfPage">
                 <AppDialog
                     v-if="termsOpen"
                     :aria-hidden="termsOpen ? 'false' : 'true'"
                     :content="termsText.content"
                     :heading="termsText.heading"
-                    :focus-on-close="'#CookeNotice__ReadMore'"
                     dialog-id="cookieinformation"
                     @close="termsOpen = false"
                 />
@@ -42,10 +36,12 @@
 
 <script>
 import AppDialog from '../dialog/AppDialog.vue';
+import CloseAndOpenButton from './CloseAndOpenButton.vue';
 
 export default {
     components: {
         AppDialog,
+        CloseAndOpenButton,
     },
     data() {
         return {
@@ -60,7 +56,7 @@ export default {
     },
     methods: {
         close() {
-            window.localStorage.setItem('cookieInformationAccepted', true);
+            //  window.localStorage.setItem('cookieInformationAccepted', true);
             this.active = false;
         },
     },
@@ -75,29 +71,15 @@ export default {
 .cookieNotice {
     position: fixed;
     left: 50%;
-    bottom: 15px;
-    margin-left: -350px;
-    width: 700px;
-    z-index: 100;
-    padding: 15px 25px;
-    padding-right: 60px;
+    bottom: 50px;
+    margin-left: -378px;
+    width: 756px;
+    z-index: 99;
+    padding: 42px 50px;
     background-color: #fff;
     transition: 0.35s;
-    box-shadow: 0px 0px 20px 1px rgba(13, 42, 56, 0.35);
-    border-radius: 6px;
+    box-shadow: 0 0 68px 0 rgba(0, 0, 0, 0.5);
     overflow: hidden;
-    &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 8px;
-        height: 100%;
-        background: linear-gradient(135deg, #8ac8df 0%, #94d3b3 100%);
-        @media ($mobile) {
-            width: 4px;
-        }
-    }
 }
 .inner {
     margin-bottom: 0;
@@ -106,34 +88,35 @@ export default {
 }
 .readMore {
     font-weight: 700;
-    letter-spacing: 0.6px;
     position: relative;
-    padding-bottom: 2px;
+    padding-bottom: 4px;
+    color: var(--primaryColor);
     &::after {
         content: "";
         position: absolute;
-        bottom: -1px;
+        top: 100%;
         left: 0;
         width: 100%;
-        height: 2px;
-        background-color: $primaryTextColor;
+        height: 3px;
+        background-color: var(--secondaryColor);
         transition: 0.25s;
     }
     &:hover::after {
-        opacity: 0;
+        background-color: var(--primaryColor);
     }
 }
-.close {
-    position: absolute;
-    top: 50%;
-    margin-top: -28px;
-    right: 0;
-    height: 56px;
-    width: 56px;
-    cursor: pointer;
-    z-index: 50;
-    transition: 0.25s;
-    background: url("../../assets/images/icon-close.svg") no-repeat center;
-    background-size: 18px;
+.cookieNotice >>> {
+    & .buttonIcon {
+        transform: rotate(45deg);
+    }
+    & .buttonTextHolder {
+        width: 85px;
+    }
+    & .buttonText--close {
+        opacity: 1;
+    }
+    & .buttonText--open {
+        display: none;
+    }
 }
 </style>
