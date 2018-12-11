@@ -73,9 +73,9 @@ export default {
                 this.$nextTick(() => {
                     setTimeout(() => {
                         this.lastLoad = true;
-                    }, 1500);
+                    }, 1300);
                 });
-            }, 250);
+            }, 200);
         }
         if (!process.client || !this.options.popup.active) return;
 
@@ -123,39 +123,43 @@ export default {
     z-index: 49;
 }
 .isHome {
-    & >>> .frontpage .left {
-        transform: translateX(-100%) skew(-7deg);
-        transition: 0.75s var(--cubicBezier);
-    }
-    & >>> .frontpage .backgroundImage,
-    & >>> .frontpage .girl,
-    & >>> .theHeader {
-        opacity: 0 !important;
-        transition: 0.35s var(--cubicBezier);
-    }
-    & >>> .frontpage .backgroundImage {
-        transition-delay: 0.8s;
-    }
-    & >>> .frontpage .girl {
-        transition-delay: 1s;
-    }
-    & >>> .theHeader {
-        transition-delay: 1.2s;
+    @media (--largerDesktop) {
+        overflow: hidden;
+        & >>> .frontpage .left {
+            transform: translateX(-100%) skew(-7deg);
+            transition: 0.8s var(--cubicBezier);
+        }
+        & >>> .frontpage .backgroundImage,
+        & >>> .frontpage .girl,
+        & >>> .theHeader {
+            opacity: 0;
+            transition: 0.5s var(--cubicBezier) 0.6s;
+        }
+        & >>> .theHeader {
+            transition-delay: 0.8s;
+        }
+        & >>> .frontpage .girl {
+            transition-delay: 1s;
+        }
     }
 }
 .isHome.isLoaded {
-    & >>> .frontpage .left {
-        transform: translateX(-25%) skew(-7deg);
-    }
-    & >>> .frontpage .backgroundImage,
-    & >>> .frontpage .girl,
-    & >>> .theHeader {
-        opacity: 1 !important;
+    @media (--largerDesktop) {
+        & >>> .frontpage .left {
+            transform: translateX(-25%) skew(-7deg);
+        }
+        & >>> .frontpage .backgroundImage,
+        & >>> .frontpage .girl,
+        & >>> .theHeader {
+            opacity: 1;
+        }
     }
 }
 .isHome.finishAnimation {
-    & >>> .frontpage .left {
-        transform: translateX(0) skew(-7deg);
+    @media (--largerDesktop) {
+        & >>> .frontpage .left {
+            transform: translateX(0) skew(-7deg);
+        }
     }
 }
 </style>

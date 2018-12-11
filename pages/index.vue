@@ -201,12 +201,21 @@ export default {
     background-color: #fff;
     @media (--largerDesktop) {
         height: 100%;
+        overflow: visible;
     }
     @media (--smallDesktop) {
         height: 100%;
     }
     @media (--smallTablet) {
         width: 100%;
+    }
+}
+.frontpage >>> .backgroundImage {
+    @media (--largerDesktop) {
+        width: calc(100% + 170px);
+        max-width: none;
+        left: auto;
+        right: 0;
     }
 }
 .frontpage >>> .girl {
