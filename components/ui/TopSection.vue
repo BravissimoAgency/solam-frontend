@@ -47,6 +47,7 @@ export default {
     @media (--mobile) {
         height: 180px;
         padding: 15px 0;
+        margin-bottom: 50px;
     }
 }
 .container {
@@ -62,6 +63,9 @@ export default {
 .heading {
     margin-left: -6px;
     position: relative;
+    @media (--mobile) {
+        margin-left: 0;
+    }
     &::before {
         content: "";
         position: absolute;
@@ -78,6 +82,16 @@ export default {
             transform: skew(-8deg);
         }
         @media (max-width: 1350px) {
+            display: none;
+        }
+        @media (--mobile) {
+            display: block;
+            left: -32px;
+            top: 9px;
+            width: 12px;
+            height: 130px;
+        }
+        @media (--smallMobile) {
             display: none;
         }
     }
