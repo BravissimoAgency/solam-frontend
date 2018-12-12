@@ -1,6 +1,6 @@
 <template>
     <header
-        :class="{'hasScrolled': hasScrolled}"
+        :class="{'hasScrolled': hasScrolled, 'headerFixed': scrollingUp || menuOpen}"
         class="theHeader bg-white"
     >
         <div class="flex inner">
@@ -37,7 +37,14 @@ export default {
     },
     data: () => ({
         hasScrolled: false,
+        scrollingUp: false,
+        lastScroll: 0,
     }),
+    computed: {
+        isHome() {
+            return this.$route.name === 'index';
+        },
+    },
     mounted() {
         if (!process.client) return;
 
@@ -48,6 +55,16 @@ export default {
             } else {
                 this.hasScrolled = false;
             }
+
+            if (this.lastScroll > scrollTop && !this.isHome) {
+                this.scrollingUp = true;
+                this.$emit('setFixed', true);
+            } else {
+                this.scrollingUp = false;
+                this.$emit('setFixed', false);
+            }
+
+            this.lastScroll = scrollTop;
         });
     },
 };
@@ -55,14 +72,14 @@ export default {
 
 <style lang="postcss" scoped>
 .theHeader {
-    transition: 0.35s;
     position: relative;
-    z-index: 60;
+    z-index: 100;
     @media (--mobile) {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
+        transition: 0.35s;
     }
     &.hasScrolled {
         @media (--mobile) {
@@ -70,6 +87,17 @@ export default {
         }
     }
 }
+@media (min-width: 601px) {
+    .headerFixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+        animation: animateIn 0.35s;
+    }
+}
+
 .logoHolder {
     width: 216px;
     height: 60px;
@@ -101,6 +129,16 @@ export default {
 .theNavigation {
     @media (--tablet) {
         display: none;
+    }
+}
+@keyframes animateIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 </style>

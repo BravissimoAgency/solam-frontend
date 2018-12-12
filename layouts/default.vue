@@ -6,13 +6,17 @@
         <TheHeader
             :class="{'menuOpen': menuOpen}"
             :menu-open="menuOpen"
+            @setFixed="val => headerFixed = val"
             @toggleMenu="menuOpen = !menuOpen"
         />
         <div
             :class="{'menuOpen': menuOpen}"
             class="wrapper"
         >
-            <div class="headerPusher"></div>
+            <div
+                :class="{ 'headerFixed': headerFixed || menuOpen }"
+                class="headerPusher"
+            ></div>
             <div class="inner">
                 <main class="main">
                     <nuxt/>
@@ -60,6 +64,7 @@ export default {
         CookieNotice,
     },
     data: () => ({
+        headerFixed: false,
         menuOpen: false,
         popupActive: false,
         options,
@@ -95,6 +100,16 @@ export default {
 <style lang="postcss" scoped>
 .headerPusher {
     display: none;
+    height: 120px;
+    &.headerFixed {
+        display: block;
+    }
+    @media (--laptop) {
+        height: 90px;
+    }
+    @media (--tablet) {
+        height: 74px;
+    }
     @media (--mobile) {
         display: block;
         height: 58px;
