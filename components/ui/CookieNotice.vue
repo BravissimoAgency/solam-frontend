@@ -142,7 +142,7 @@ export default {
         text-align: center;
     }
 }
-.inner br {
+.cookieNotice .inner br {
     @media (--mobile) {
         display: none;
     }
