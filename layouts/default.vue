@@ -139,8 +139,7 @@ export default {
     .isHome {
         overflow: hidden;
         & >>> .left {
-            transform: translateX(-100%) skew(-7deg);
-            transition: 0.8s var(--cubicBezier);
+            transform: translateX(-135%) skew(-7deg);
         }
         & >>> .backgroundImage,
         & >>> .girl,
@@ -154,10 +153,20 @@ export default {
         & >>> .girl {
             transition-delay: 1s;
         }
+        & >>> .left .top {
+            opacity: 0;
+            transition: 0.4s var(--cubicBezier) 0.4s;
+        }
+        & >>> .left .textHolder {
+            opacity: 0;
+            transform: translateY(150px);
+            transition: 0.4s var(--cubicBezier) 0.7s;
+        }
     }
     .isHome.isLoaded {
         & >>> .left {
-            transform: translateX(-25%) skew(-7deg);
+            transform: translateX(-35%) skew(-7deg);
+            transition: 0.8s cubic-bezier(0.18, 0.89, 0.32, 1.28);
         }
         & >>> .backgroundImage,
         & >>> .girl,
@@ -167,6 +176,13 @@ export default {
     }
     .isHome.finishAnimation >>> .left {
         transform: translateX(0) skew(-7deg);
+    }
+    .isHome.finishAnimation >>> .left .top {
+        opacity: 1;
+    }
+    .isHome.finishAnimation >>> .left .textHolder {
+        opacity: 1;
+        transform: translateY(0);
     }
     .isHome.finishAnimation >>> .theHeader {
         transition: 0s;

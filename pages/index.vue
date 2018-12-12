@@ -212,7 +212,7 @@ export default {
 }
 .frontpage >>> .backgroundImage {
     @media (--largerDesktop) {
-        width: calc(100% + 170px);
+        width: calc(100% + 25%);
         max-width: none;
         left: auto;
         right: 0;
