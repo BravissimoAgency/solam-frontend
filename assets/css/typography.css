@@ -146,9 +146,16 @@ p {
     color: var(--primaryColor);
     margin-bottom: 30px;
     margin-left: -5px;
+    @media (--largeTablet) {
+        margin-left: 0;
+        padding-left: 30px;
+    }
+    @media (--tablet) {
+        padding-left: 25px;
+    }
     @media (--mobile) {
+        padding-left: 18px;
         margin-bottom: 20px;
-        margin-left: -2px;
     }
     &::after {
         content: "";
@@ -168,7 +175,18 @@ p {
             left: -26px;
         }
         @media (--largeTablet) {
-            display: none;
+            left: 0;
+        }
+        @media (--tablet) {
+            height: 52px;
+        }
+        @media (--mediumTablet) {
+            height: 44px;
+        }
+        @media (--mobile) {
+            top: -2px;
+            width: 4px;
+            height: 36px;
         }
     }
 }
