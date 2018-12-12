@@ -53,9 +53,12 @@ export default {
     margin-top: 240px;
     background-color: #f2f6f8;
     @media (--laptop) {
-        margin-top: 120px;
+        margin-top: 150px;
     }
-    @media (--mediumTablet) {
+    @media (--largeTablet) {
+        margin-top: 180px;
+    }
+    @media (--tablet) {
         margin-top: 60px;
     }
     @media (--mobile) {
@@ -175,11 +178,12 @@ export default {
     }
 }
 .theFooter >>> .footerImage {
-    width: 1110px;
+    width: 1120px;
     max-width: none;
     position: absolute;
     bottom: 0;
     right: 0;
+    line-height: 0;
     @media (--laptop) {
         width: 950px;
         right: -100px;
