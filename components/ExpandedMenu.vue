@@ -49,7 +49,7 @@ export default {
     width: 250px;
     z-index: 40;
     overflow: auto;
-    background-color: #f2f6f8;
+    background-color: var(--primaryColor);
     opacity: 0;
     transition-delay: 0.35s;
     &.isOpen {
@@ -73,10 +73,11 @@ export default {
     font-size: 16px;
     padding: 20px 25px;
     display: block;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #fff;
     padding-left: 0;
+    color: #fff;
     &.nuxt-link-active {
-        color: var(--primaryColor);
+        color: var(--secondaryColor);
     }
 }
 </style>
