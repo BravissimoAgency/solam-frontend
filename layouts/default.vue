@@ -85,7 +85,12 @@ export default {
                 this.lastLoad = true;
             }, 1500);
         }
-        if (!process.client || !this.options.popup.active) return;
+        const thisDate = new Date();
+        const thisDateYmd = `${thisDate.getFullYear()}${(thisDate.getMonth() + 1)}${thisDate.getDate()}`;
+        if (!process.client
+            || !this.options.popup.active
+            || (this.options.popup.endDate < thisDateYmd && this.options.popup.endDate)
+        ) return;
 
         if (window.localStorage.getItem(`popup__${this.options.popup.id}`) === null) {
             this.popupActive = true;
