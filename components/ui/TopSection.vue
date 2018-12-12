@@ -42,7 +42,7 @@ export default {
         text-align: center;
     }
     @media (--mediumTablet) {
-        margin-bottom: 40px;
+        margin-bottom: 70px;
     }
     @media (--mobile) {
         height: 180px;
@@ -66,6 +66,9 @@ export default {
     @media (--mobile) {
         margin-left: 0;
     }
+    @media (--smallMobile) {
+        font-size: 30px;
+    }
     &::before {
         content: "";
         position: absolute;
@@ -82,7 +85,16 @@ export default {
             transform: skew(-8deg);
         }
         @media (max-width: 1350px) {
-            display: none;
+            height: 240px;
+        }
+        @media (--tablet) {
+            height: 200px;
+            top: 14px;
+            width: 16px;
+        }
+        @media (--mediumTablet) {
+            top: 12px;
+            width: 15px;
         }
         @media (--mobile) {
             display: block;
@@ -92,7 +104,9 @@ export default {
             height: 130px;
         }
         @media (--smallMobile) {
-            display: none;
+            width: 8px;
+            left: -24px;
+            top: 8px;
         }
     }
 }
