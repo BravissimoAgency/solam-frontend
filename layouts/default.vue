@@ -170,5 +170,8 @@ export default {
     .isHome.finishAnimation >>> .left {
         transform: translateX(0) skew(-7deg);
     }
+    .isHome.finishAnimation >>> .theHeader {
+        transition: 0s;
+    }
 }
 </style>
