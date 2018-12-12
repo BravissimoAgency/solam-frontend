@@ -75,12 +75,10 @@ export default {
         if (process.client) {
             setTimeout(() => {
                 this.loaded = true;
-                this.$nextTick(() => {
-                    setTimeout(() => {
-                        this.lastLoad = true;
-                    }, 1300);
-                });
             }, 200);
+            setTimeout(() => {
+                this.lastLoad = true;
+            }, 1500);
         }
         if (!process.client || !this.options.popup.active) return;
 
