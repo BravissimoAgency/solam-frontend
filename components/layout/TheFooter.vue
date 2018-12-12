@@ -13,14 +13,26 @@
                         />
                     </div>
                 </div>
-                <div class="bottom">
-                    Website produced by
-                    <a
-                        href="https://www.bravissimo.se/"
-                        target="_blank"
-                    >
-                        Bravissimo
-                    </a>
+                <div class="bottom flex">
+                    <div class="bottomLeft">
+                        SOLAM is a part of the
+                        <a
+                            href="http://lyckeby.com/en"
+                            target="_blank"
+                        >
+                            Lyckeby Group
+                        </a>
+                    </div>
+                    <div class="bottomRight">
+                        Website produced by
+                        <a
+                            href="https://www.bravissimo.se/"
+                            target="_blank"
+                        >
+                            Bravissimo
+                        </a>
+                    </div>
+
                 </div>
             </div>
             <div class="right">
@@ -144,8 +156,34 @@ export default {
     @media (--laptop) {
         padding: 15px 30px;
     }
+    @media (--mediumTablet) {
+        flex-wrap: wrap;
+        line-height: 1.6;
+    }
     @media (--smallTablet) {
         text-align: center;
+    }
+    & a:hover {
+        color: var(--primaryColor);
+    }
+}
+.bottomLeft {
+    border-right: 1px solid #8A969D;
+    margin-right: 15px;
+    padding-right: 15px;
+    @media (--mediumTablet) {
+        width: 100%;
+        border-right: 0;
+        margin-right: 0;
+        padding-right: 0;
+    }
+    @media (--smallTablet) {
+        display: none;
+    }
+}
+.bottomRight {
+    @media (--mediumTablet) {
+        width: 100%;
     }
 }
 .right {
