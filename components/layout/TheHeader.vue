@@ -74,11 +74,6 @@ export default {
 .theHeader {
     position: relative;
     z-index: 100;
-    &.isHome {
-        z-index: 60;
-        position: relative;
-        box-shadow: none;
-    }
     @media (--mobile) {
         position: fixed;
         top: 0;
@@ -93,6 +88,11 @@ export default {
     }
 }
 @media (min-width: 601px) {
+    .isHome {
+        z-index: 60;
+        position: relative;
+        box-shadow: none;
+    }
     .headerFixed {
         position: fixed;
         top: 0;
