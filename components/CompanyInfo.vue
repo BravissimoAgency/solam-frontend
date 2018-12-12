@@ -139,6 +139,9 @@ export default {
         width: 100%;
     }
     @media (--mobile) {
+        padding: 0 25px;
+    }
+    @media (--smallMobile) {
         padding: 0 15px;
     }
 }

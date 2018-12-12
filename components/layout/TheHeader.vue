@@ -131,6 +131,9 @@ export default {
         padding: 20px 30px;
     }
     @media (--mobile) {
+        padding: 15px 25px;
+    }
+    @media (--smallMobile) {
         padding: 15px;
     }
 }

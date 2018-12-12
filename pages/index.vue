@@ -82,6 +82,9 @@ export default {
     }
     @media (--mobile) {
         min-height: calc(100vh - 58px);
+        padding: 30px 25px;
+    }
+    @media (--smallMobile) {
         padding: 30px 15px;
     }
 }
