@@ -1,6 +1,6 @@
 <template>
     <div
-        :class="{'isLoaded': loaded, 'finishAnimation': lastLoad, 'isHome': $route.path === '/'}"
+        :class="{'isLoaded': loaded, 'finishAnimation': lastLoad, isHome}"
         class="app"
     >
         <TheHeader
@@ -71,6 +71,11 @@ export default {
         loaded: false,
         lastLoad: false,
     }),
+    computed: {
+        isHome() {
+            return this.$route.path === '/';
+        },
+    },
     mounted() {
         if (process.client) {
             setTimeout(() => {
@@ -111,6 +116,12 @@ export default {
     @media (--mobile) {
         display: block;
         height: 58px;
+    }
+}
+.isHome .headerPusher {
+    display: none !important;
+    @media (--mobile) {
+        display: block !important;
     }
 }
 .wrapper {

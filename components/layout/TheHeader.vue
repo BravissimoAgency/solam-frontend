@@ -88,11 +88,6 @@ export default {
     }
 }
 @media (min-width: 601px) {
-    .isHome {
-        z-index: 60;
-        position: relative;
-        box-shadow: none;
-    }
     .headerFixed {
         position: fixed;
         top: 0;
@@ -100,6 +95,11 @@ export default {
         width: 100%;
         box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
         animation: animateIn 0.35s;
+    }
+    .isHome {
+        z-index: 60;
+        position: relative;
+        box-shadow: none;
     }
 }
 
