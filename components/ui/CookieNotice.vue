@@ -109,11 +109,43 @@ export default {
     transition: 0.35s;
     box-shadow: 0 0 68px 0 rgba(0, 0, 0, 0.5);
     overflow: hidden;
+    @media (--tablet) {
+        width: 680px;
+        margin-left: -340px;
+        padding: 40px;
+        bottom: 30px;
+    }
+    @media (--mediumTablet) {
+        width: 560px;
+        margin-left: -280px;
+        padding: 30px;
+    }
+    @media (--mobile) {
+        width: calc(100% - 20px);
+        margin-left: 0;
+        left: 10px;
+        bottom: 10px;
+        padding: 25px 20px;
+    }
 }
 .inner {
     margin-bottom: 0;
     text-align: left;
     font-size: 16px;
+    @media (--mediumTablet) {
+        font-size: 15px;
+    }
+    @media (--mobile) {
+        width: 100%;
+        font-size: 14px;
+        padding-bottom: 40px;
+        text-align: center;
+    }
+}
+.inner br {
+    @media (--mobile) {
+        display: none;
+    }
 }
 .readMore {
     font-weight: 700;
@@ -135,6 +167,14 @@ export default {
     }
 }
 .cookieNotice >>> {
+    & .closeAndOpenButton {
+        @media (--mobile) {
+            position: absolute;
+            left: 50%;
+            bottom: 25px;
+            margin-left: -13px;
+        }
+    }
     & .buttonIcon {
         transform: rotate(45deg);
     }
