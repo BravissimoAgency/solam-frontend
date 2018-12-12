@@ -74,6 +74,9 @@ export default {
 .theHeader {
     position: relative;
     z-index: 100;
+    @media (--tablet) {
+        transition: transform .35s;
+    }
     @media (--mobile) {
         position: fixed;
         top: 0;
