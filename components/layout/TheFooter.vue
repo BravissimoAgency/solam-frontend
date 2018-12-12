@@ -182,10 +182,11 @@ export default {
     right: 0;
     @media (--laptop) {
         width: 950px;
+        right: -100px;
     }
     @media (--largeTablet) {
         width: 1010px;
-        right: -60%;
+        right: -280px;
     }
     @media (--tablet) {
         display: none;
