@@ -132,6 +132,9 @@ export default {
 }
 .locations {
     padding-right: 56px;
+    @media (--largeTablet) {
+        padding-right: 30px;
+    }
     @media (--mobile) {
         padding-right: 0;
     }

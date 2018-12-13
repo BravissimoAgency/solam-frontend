@@ -58,6 +58,10 @@ export default {
 .location {
     margin-bottom: 30px;
     padding-right: 30px;
+    min-width: 290px;
+    @media (--tablet) {
+        min-width: 0;
+    }
     @media (--mobile) {
         width: 100%;
         padding-right: 0;
