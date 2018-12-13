@@ -180,8 +180,8 @@ export default {
         margin-right: 0;
         padding-right: 0;
     }
-    @media (--smallTablet) {
-        display: none;
+    @media (--mobile) {
+        margin-bottom: 2px;
     }
 }
 .bottomRight {
@@ -226,12 +226,12 @@ export default {
     right: 0;
     line-height: 0;
     @media (--laptop) {
-        width: 950px;
+        width: 960px;
         right: -100px;
     }
     @media (--largeTablet) {
-        width: 1010px;
-        right: -280px;
+        width: 1020px;
+        right: -285px;
     }
     @media (--tablet) {
         display: none;
