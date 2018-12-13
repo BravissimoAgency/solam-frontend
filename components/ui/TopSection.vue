@@ -63,6 +63,12 @@ export default {
 .heading {
     margin-left: -6px;
     position: relative;
+    @media (--laptop) {
+        margin-left: 56px;
+    }
+    @media (max-width: 1350px) {
+        margin-left: 0;
+    }
     @media (--mobile) {
         margin-left: 0;
     }
@@ -81,7 +87,7 @@ export default {
         @media (--laptop) {
             left: -46px;
             width: 18px;
-            height: 200px;
+            height: 140px;
             transform: skew(-8deg);
         }
         @media (max-width: 1350px) {
