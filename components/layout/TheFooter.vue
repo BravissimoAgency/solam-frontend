@@ -13,15 +13,7 @@
                         />
                     </div>
                 </div>
-                <div class="bottom">
-                    Website produced by
-                    <a
-                        href="https://www.bravissimo.se/"
-                        target="_blank"
-                    >
-                        Bravissimo
-                    </a>
-                </div>
+                <TheFooterBottom/>
             </div>
             <div class="right">
                 <AppImage
@@ -31,16 +23,19 @@
                 />
             </div>
         </div>
+        <TheFooterBottom/>
     </section>
 </template>
 
 <script>
 import Locations from '../ui/Locations.vue';
+import TheFooterBottom from './TheFooterBottom.vue';
 import options from '../../static/json/options.json';
 
 export default {
     components: {
         Locations,
+        TheFooterBottom,
     },
     data: () => ({
         options,
@@ -77,6 +72,17 @@ export default {
         padding-left: 0;
     }
 }
+.theFooter .bottom {
+    display: none;
+    @media (--tablet) {
+        display: flex;
+    }
+}
+.inner {
+    @media (--tablet) {
+        flex-wrap: wrap;
+    }
+}
 .left {
     width: 69%;
     @media (--smallDesktop) {
@@ -86,12 +92,14 @@ export default {
         width: 65%;
     }
     @media (--tablet) {
-        width: 72%;
-        padding-right: 60px;
-    }
-    @media (--smallTablet) {
         width: 100%;
         padding-right: 0;
+    }
+    & .bottom {
+        display: flex;
+        @media (--tablet) {
+            display: none;
+        }
     }
 }
 .right {
@@ -103,10 +111,7 @@ export default {
         width: 35%;
     }
     @media (--tablet) {
-        width: 28%;
-    }
-    @media (--smallTablet) {
-        display: none;
+        width: 100%;
     }
 }
 .top {
@@ -119,6 +124,9 @@ export default {
         padding: 40px 30px;
     }
     @media (--mobile) {
+        padding: 30px 25px;
+    }
+    @media (--smallMobile) {
         padding: 30px 15px;
     }
 }
@@ -133,24 +141,17 @@ export default {
     width: 670px;
     margin: 0;
 }
-.bottom {
-    padding: 23px 100px;
-    background-color: #e4eaec;
-    color: #8a969c;
-    font-size: 13px;
-    @media (--smallDesktop) {
-        padding: 20px 50px;
-    }
-    @media (--laptop) {
-        padding: 15px 30px;
-    }
-    @media (--smallTablet) {
-        text-align: center;
-    }
-}
 .right {
     background-color: var(--primaryColor);
     position: relative;
+    @media (--tablet) {
+        background-color: transparent;
+        display: flex;
+        justify-content: flex-end;
+    }
+    @media (--mobile) {
+        justify-content: flex-start;
+    }
 }
 .right::before {
     content: "";
@@ -161,8 +162,15 @@ export default {
     width: 100%;
     height: 100%;
     background-color: var(--primaryColor);
-    @media (--mediumTablet) {
-        left: -50px;
+    @media (--tablet) {
+        left: 0;
+        top: auto;
+        bottom: 0;
+        height: calc(100% - 64px);
+        transform: skew(0deg);
+    }
+    @media (--mobile) {
+        height: calc(100% - 46px);
     }
 }
 .content {
@@ -185,15 +193,23 @@ export default {
     right: 0;
     line-height: 0;
     @media (--laptop) {
-        width: 950px;
+        width: 960px;
         right: -100px;
     }
     @media (--largeTablet) {
-        width: 1010px;
-        right: -280px;
+        width: 1020px;
+        right: -285px;
     }
     @media (--tablet) {
-        display: none;
+        display: block;
+        width: 700px;
+        position: relative;
+        right: 0;
+        bottom: auto;
+    }
+    @media (--mobile) {
+        width: 500px;
+        right: 60px;
     }
 }
 </style>

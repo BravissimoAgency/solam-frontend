@@ -44,7 +44,7 @@ export default {
         padding: 0 50px;
     }
     @media (--largeTablet) {
-        padding: 0 15px;
+        padding: 0;
     }
 }
 .application {

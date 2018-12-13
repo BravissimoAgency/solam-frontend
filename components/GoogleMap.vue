@@ -78,8 +78,8 @@ export default {
                 map.fitBounds(bounds);
                 map.panBy(0, -30);
                 if (window.innerWidth > 600) {
-                    const zoom = map.getZoom();
                     setTimeout(() => {
+                        const zoom = map.getZoom();
                         map.setZoom(zoom > 6 ? 6 : zoom);
                     }, 250);
                 }

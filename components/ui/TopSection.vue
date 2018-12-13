@@ -42,15 +42,16 @@ export default {
         text-align: center;
     }
     @media (--mediumTablet) {
-        margin-bottom: 40px;
+        margin-bottom: 70px;
     }
     @media (--mobile) {
         height: 180px;
         padding: 15px 0;
+        margin-bottom: 50px;
     }
 }
 .container {
-    @media (max-width: 1350px) {
+    @media (--tablet) {
         align-items: center;
         justify-content: center;
     }
@@ -62,6 +63,18 @@ export default {
 .heading {
     margin-left: -6px;
     position: relative;
+    @media (--laptop) {
+        margin-left: 56px;
+    }
+    @media (--tablet) {
+        margin-left: 0;
+    }
+    @media (--mobile) {
+        margin-left: 0;
+    }
+    @media (--smallMobile) {
+        font-size: 30px;
+    }
     &::before {
         content: "";
         position: absolute;
@@ -74,11 +87,29 @@ export default {
         @media (--laptop) {
             left: -46px;
             width: 18px;
-            height: 200px;
+            height: 140px;
             transform: skew(-8deg);
         }
-        @media (max-width: 1350px) {
-            display: none;
+        @media (--tablet) {
+            height: 200px;
+            top: 14px;
+            width: 16px;
+        }
+        @media (--mediumTablet) {
+            top: 12px;
+            width: 15px;
+        }
+        @media (--mobile) {
+            display: block;
+            left: -32px;
+            top: 9px;
+            width: 12px;
+            height: 130px;
+        }
+        @media (--smallMobile) {
+            width: 8px;
+            left: -24px;
+            top: 8px;
         }
     }
 }

@@ -97,6 +97,9 @@ export default {
         padding: 0 30px;
     }
     @media (--mobile) {
+        padding: 0 25px;
+    }
+    @media (--smallMobile) {
         padding: 0 15px;
     }
 }

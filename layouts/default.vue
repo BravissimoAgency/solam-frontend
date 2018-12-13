@@ -1,6 +1,6 @@
 <template>
     <div
-        :class="{'isLoaded': loaded, 'finishAnimation': lastLoad, 'isHome': $route.path === '/'}"
+        :class="{'isLoaded': loaded, 'finishAnimation': lastLoad, isHome}"
         class="app"
     >
         <TheHeader
@@ -71,8 +71,13 @@ export default {
         loaded: false,
         lastLoad: false,
     }),
+    computed: {
+        isHome() {
+            return this.$route.path === '/';
+        },
+    },
     mounted() {
-        if (process.client) {
+        if (process.client && this.isHome) {
             setTimeout(() => {
                 this.loaded = true;
             }, 200);
@@ -80,15 +85,22 @@ export default {
                 this.lastLoad = true;
             }, 1500);
         }
-        if (!process.client || !this.options.popup.active) return;
 
-        if (window.localStorage.getItem(`popup__${this.options.popup.id}`) === null) {
+        const thisDate = new Date();
+        const thisDateYmd = `${thisDate.getFullYear()}${(thisDate.getMonth() + 1)}${thisDate.getDate()}`;
+
+        if (!process.client
+            || !this.options.popup.active
+            || (this.options.popup.startDate > thisDateYmd && this.options.popup.startDate)
+            || (this.options.popup.endDate < thisDateYmd && this.options.popup.endDate)
+        ) return;
+
+        if (this.isHome) {
             this.popupActive = true;
         }
     },
     methods: {
         closePopup() {
-            window.localStorage.setItem(`popup__${this.options.popup.id}`, true);
             this.popupActive = false;
         },
     },
@@ -111,6 +123,12 @@ export default {
     @media (--mobile) {
         display: block;
         height: 58px;
+    }
+}
+.isHome .headerPusher {
+    display: none !important;
+    @media (--mobile) {
+        display: block !important;
     }
 }
 .wrapper {

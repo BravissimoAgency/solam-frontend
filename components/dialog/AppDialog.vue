@@ -7,7 +7,7 @@
                         <div class="inner">
                             <div
                                 v-click-outside="close"
-                                class="overflow-hidden mb-8"
+                                class="overflow-hidden"
                             >
                                 <slot/>
                             </div>
@@ -86,6 +86,6 @@ export default {
 .inner {
     max-width: 100%;
     margin: 0 auto;
-    padding-bottom: 30px;
+    padding: 30px 0;
 }
 </style>

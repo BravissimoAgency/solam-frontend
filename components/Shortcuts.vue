@@ -59,8 +59,11 @@ export default {
         margin-bottom: 60px;
     }
     @media (--mobile) {
-        padding: 0 15px;
+        padding: 0 25px;
         margin-bottom: 40px;
+    }
+    @media (--smallMobile) {
+        padding: 0 15px;
     }
 }
 .shortcut {
