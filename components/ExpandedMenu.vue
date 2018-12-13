@@ -75,9 +75,9 @@ export default {
     display: block;
     border-bottom: 1px solid #fff;
     padding-left: 0;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.75);
     &.nuxt-link-active {
-        color: var(--secondaryColor);
+        color: rgba(255, 255, 255, 1);
     }
 }
 </style>
