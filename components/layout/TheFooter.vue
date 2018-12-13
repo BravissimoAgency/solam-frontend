@@ -13,27 +13,7 @@
                         />
                     </div>
                 </div>
-                <div class="bottom flex">
-                    <div class="bottomLeft">
-                        SOLAM is a part of the
-                        <a
-                            href="http://lyckeby.com/en"
-                            target="_blank"
-                        >
-                            Lyckeby Group
-                        </a>
-                    </div>
-                    <div class="bottomRight">
-                        Website produced by
-                        <a
-                            href="https://www.bravissimo.se/"
-                            target="_blank"
-                        >
-                            Bravissimo
-                        </a>
-                    </div>
-
-                </div>
+                <TheFooterBottom/>
             </div>
             <div class="right">
                 <AppImage
@@ -43,16 +23,19 @@
                 />
             </div>
         </div>
+        <TheFooterBottom/>
     </section>
 </template>
 
 <script>
 import Locations from '../ui/Locations.vue';
+import TheFooterBottom from './TheFooterBottom.vue';
 import options from '../../static/json/options.json';
 
 export default {
     components: {
         Locations,
+        TheFooterBottom,
     },
     data: () => ({
         options,
@@ -89,8 +72,14 @@ export default {
         padding-left: 0;
     }
 }
+.theFooter .bottom {
+    display: none;
+    @media (--tablet) {
+        display: flex;
+    }
+}
 .inner {
-    @media (--smallTablet) {
+    @media (--tablet) {
         flex-wrap: wrap;
     }
 }
@@ -103,12 +92,14 @@ export default {
         width: 65%;
     }
     @media (--tablet) {
-        width: 72%;
-        padding-right: 60px;
-    }
-    @media (--smallTablet) {
         width: 100%;
         padding-right: 0;
+    }
+    & .bottom {
+        display: flex;
+        @media (--tablet) {
+            display: none;
+        }
     }
 }
 .right {
@@ -120,9 +111,6 @@ export default {
         width: 35%;
     }
     @media (--tablet) {
-        width: 28%;
-    }
-    @media (--smallTablet) {
         width: 100%;
     }
 }
@@ -153,53 +141,16 @@ export default {
     width: 670px;
     margin: 0;
 }
-.bottom {
-    padding: 23px 100px;
-    background-color: #e4eaec;
-    color: #8a969c;
-    font-size: 13px;
-    @media (--smallDesktop) {
-        padding: 20px 50px;
-    }
-    @media (--laptop) {
-        padding: 15px 30px;
-    }
-    @media (--mediumTablet) {
-        flex-wrap: wrap;
-        line-height: 1.6;
-    }
-    @media (--smallTablet) {
-        text-align: center;
-        display: none;
-    }
-    & a:hover {
-        color: var(--primaryColor);
-    }
-}
-.bottomLeft {
-    border-right: 1px solid #8A969D;
-    margin-right: 15px;
-    padding-right: 15px;
-    @media (--mediumTablet) {
-        width: 100%;
-        border-right: 0;
-        margin-right: 0;
-        padding-right: 0;
-    }
-    @media (--mobile) {
-        margin-bottom: 2px;
-    }
-}
-.bottomRight {
-    @media (--mediumTablet) {
-        width: 100%;
-    }
-}
 .right {
     background-color: var(--primaryColor);
     position: relative;
-    @media (--smallTablet) {
+    @media (--tablet) {
         background-color: transparent;
+        display: flex;
+        justify-content: flex-end;
+    }
+    @media (--mobile) {
+        justify-content: flex-start;
     }
 }
 .right::before {
@@ -211,10 +162,7 @@ export default {
     width: 100%;
     height: 100%;
     background-color: var(--primaryColor);
-    @media (--mediumTablet) {
-        left: -50px;
-    }
-    @media (--smallTablet) {
+    @media (--tablet) {
         left: 0;
         top: auto;
         bottom: 0;
@@ -253,17 +201,13 @@ export default {
         right: -285px;
     }
     @media (--tablet) {
-        display: none;
-    }
-    @media (--smallTablet) {
         display: block;
         width: 700px;
         position: relative;
-        right: -60px;
+        right: 0;
         bottom: auto;
     }
     @media (--mobile) {
-        display: block;
         width: 500px;
         right: 60px;
     }
