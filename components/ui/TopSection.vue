@@ -51,7 +51,7 @@ export default {
     }
 }
 .container {
-    @media (max-width: 1350px) {
+    @media (--tablet) {
         align-items: center;
         justify-content: center;
     }
@@ -66,7 +66,7 @@ export default {
     @media (--laptop) {
         margin-left: 56px;
     }
-    @media (max-width: 1350px) {
+    @media (--tablet) {
         margin-left: 0;
     }
     @media (--mobile) {
@@ -89,9 +89,6 @@ export default {
             width: 18px;
             height: 140px;
             transform: skew(-8deg);
-        }
-        @media (max-width: 1350px) {
-            height: 240px;
         }
         @media (--tablet) {
             height: 200px;
