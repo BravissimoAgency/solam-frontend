@@ -77,7 +77,7 @@ export default {
         },
     },
     mounted() {
-        if (process.client) {
+        if (process.client && this.isHome) {
             setTimeout(() => {
                 this.loaded = true;
             }, 200);

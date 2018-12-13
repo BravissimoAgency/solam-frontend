@@ -1,14 +1,14 @@
 <template>
-    <nuxt-link
+    <a
         class="block w-full h-full"
-        to="/"
+        href="/"
     >
         <img
             :src="white ? logoWhite : logoColor"
             class="block w-full h-full"
             alt=""
         >
-    </nuxt-link>
+    </a>
 </template>
 
 <script>
