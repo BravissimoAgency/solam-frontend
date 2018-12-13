@@ -89,6 +89,11 @@ export default {
         padding-left: 0;
     }
 }
+.inner {
+    @media (--smallTablet) {
+        flex-wrap: wrap;
+    }
+}
 .left {
     width: 69%;
     @media (--smallDesktop) {
@@ -118,7 +123,7 @@ export default {
         width: 28%;
     }
     @media (--smallTablet) {
-        display: none;
+        width: 100%;
     }
 }
 .top {
@@ -165,6 +170,7 @@ export default {
     }
     @media (--smallTablet) {
         text-align: center;
+        display: none;
     }
     & a:hover {
         color: var(--primaryColor);
@@ -192,6 +198,9 @@ export default {
 .right {
     background-color: var(--primaryColor);
     position: relative;
+    @media (--smallTablet) {
+        background-color: transparent;
+    }
 }
 .right::before {
     content: "";
@@ -204,6 +213,16 @@ export default {
     background-color: var(--primaryColor);
     @media (--mediumTablet) {
         left: -50px;
+    }
+    @media (--smallTablet) {
+        left: 0;
+        top: auto;
+        bottom: 0;
+        height: calc(100% - 64px);
+        transform: skew(0deg);
+    }
+    @media (--mobile) {
+        height: calc(100% - 46px);
     }
 }
 .content {
@@ -235,6 +254,18 @@ export default {
     }
     @media (--tablet) {
         display: none;
+    }
+    @media (--smallTablet) {
+        display: block;
+        width: 700px;
+        position: relative;
+        right: -60px;
+        bottom: auto;
+    }
+    @media (--mobile) {
+        display: block;
+        width: 500px;
+        right: 60px;
     }
 }
 </style>
