@@ -139,6 +139,12 @@ export default {
         padding-right: 0;
     }
 }
+.locations >>> .location {
+    min-width: 290px;
+    @media (--tablet) {
+        min-width: 0;
+    }
+}
 .container {
     padding: 0;
     width: 670px;
