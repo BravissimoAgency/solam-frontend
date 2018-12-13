@@ -77,15 +77,8 @@ export default {
         min-height: calc(100vh - 74px);
     }
     @media (--smallTablet) {
-        display: flex;
-        padding: 30px;
-    }
-    @media (--mobile) {
-        min-height: calc(100vh - 58px);
-        padding: 30px 25px;
-    }
-    @media (--smallMobile) {
-        padding: 30px 15px;
+        padding: 0;
+        min-height: 0;
     }
 }
 .left {
@@ -119,9 +112,12 @@ export default {
         width: 100%;
         margin: auto;
         transform: none;
-        width: 500px;
         max-width: 100%;
         min-height: 0;
+        padding: 50px 50px 80px;
+    }
+    @media (--mobile) {
+        padding: 30px 30px 60px;
     }
 }
 .top {
@@ -157,12 +153,9 @@ export default {
     }
     @media (--smallTablet) {
         transform: none;
-        padding: 50px;
+        padding: 0;
         text-align: center;
         min-height: 0;
-    }
-    @media (--mobile) {
-        padding: 30px;
     }
 }
 .textHolder {
@@ -210,7 +203,11 @@ export default {
         height: 100%;
     }
     @media (--smallTablet) {
+        position: relative;
+        overflow: visible;
         width: 100%;
+        height: auto;
+        margin-top: -30px;
     }
 }
 .frontpage >>> .backgroundImage {
@@ -247,7 +244,13 @@ export default {
         left: 90px;
     }
     @media (--smallTablet) {
-        display: none;
+        position: relative;
+        bottom: auto;
+        left: auto;
+        margin: 0 auto;
+    }
+    @media (--mobile) {
+        right: -40px;
     }
 }
 </style>
