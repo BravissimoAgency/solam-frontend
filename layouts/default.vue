@@ -85,12 +85,16 @@ export default {
                 this.lastLoad = true;
             }, 1500);
         }
+
         const thisDate = new Date();
         const thisDateYmd = `${thisDate.getFullYear()}${(thisDate.getMonth() + 1)}${thisDate.getDate()}`;
+
         if (!process.client
             || !this.options.popup.active
+            || (this.options.popup.startDate > thisDateYmd && this.options.popup.startDate)
             || (this.options.popup.endDate < thisDateYmd && this.options.popup.endDate)
         ) return;
+
         if (this.isHome) {
             this.popupActive = true;
         }
