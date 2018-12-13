@@ -37,7 +37,7 @@
                 >
                 </div>
             </AppDialogContent>
-            <CookieNotice/>
+            <CookieNotice v-if="!popupActive"/>
         </no-ssr>
         <ExpandedMenu
             :open="menuOpen"
