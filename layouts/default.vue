@@ -91,8 +91,9 @@ export default {
             || !this.options.popup.active
             || (this.options.popup.endDate < thisDateYmd && this.options.popup.endDate)
         ) return;
-
-        this.popupActive = true;
+        if (this.isHome) {
+            this.popupActive = true;
+        }
     },
     methods: {
         closePopup() {
