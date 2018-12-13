@@ -92,13 +92,10 @@ export default {
             || (this.options.popup.endDate < thisDateYmd && this.options.popup.endDate)
         ) return;
 
-        if (window.localStorage.getItem(`popup__${this.options.popup.id}`) === null) {
-            this.popupActive = true;
-        }
+        this.popupActive = true;
     },
     methods: {
         closePopup() {
-            window.localStorage.setItem(`popup__${this.options.popup.id}`, true);
             this.popupActive = false;
         },
     },
