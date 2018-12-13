@@ -6,18 +6,20 @@
                     <Logo white/>
                 </div>
             </div>
-            <div class="inner">
-                <div class="textHolder">
-                    <h1 class="heading">{{ page.heading }}</h1>
-                    <div
-                        class="preamble"
-                        v-html="page.preamble"
-                    ></div>
-                    <AppButton
-                        :url="page.button.url"
-                        :target="page.button.target"
-                        label="Read more"
-                    />
+            <div class="outer flex">
+                <div class="inner">
+                    <div class="textHolder">
+                        <h1 class="heading">{{ page.heading }}</h1>
+                        <div
+                            class="preamble"
+                            v-html="page.preamble"
+                        ></div>
+                        <AppButton
+                            :url="page.button.url"
+                            :target="page.button.target"
+                            label="Read more"
+                        />
+                    </div>
                 </div>
             </div>
         </div>
@@ -137,6 +139,7 @@ export default {
     padding-right: 200px;
     transform: skew(7deg);
     display: flex;
+    max-width: 100%;
     align-items: center;
     min-height: calc(100vh - 140px);
     @media (--smallDesktop) {
