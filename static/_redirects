@@ -3,7 +3,10 @@
 
 # Redirects from what the browser requests to what we serve
 
-/admin https://changeme.se/wp-admin
-/wp-admin https://changeme.se/wp-admin
+/admin https://wp.solam.com/wp-admin
+/wp-admin https://wp.solam.com/wp-admin
 
 # 301 Redirects
+
+https://solam-temp.netlify.com/* https://www.solam.com/:splat 301!
+https://solam.netlify.com/* https://www.solam.com/:splat 301!
