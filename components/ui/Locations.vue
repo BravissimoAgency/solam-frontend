@@ -21,7 +21,23 @@
                     src="../../assets/images/icon-tel.svg"
                 >
                 <p class="text">
-                    Tel. <a :href="`tel:${location.phone}`">{{ location.phone }}</a>
+                    Tel. <a :href="`tel:${location.phone}`">
+                        {{ location.phone }}
+                    </a>
+                </p>
+            </div>
+            <div
+                v-if="location.secondaryPhone"
+                class="row"
+            >
+                <img
+                    class="icon"
+                    src="../../assets/images/icon-tel.svg"
+                >
+                <p class="text">
+                    Tel. <a :href="`tel:${location.secondaryPhone}`">
+                        {{ location.secondaryPhone }}
+                    </a>
                 </p>
             </div>
             <div
