@@ -5,6 +5,7 @@
 
 /admin https://wp.solam.com/wp-admin
 /wp-admin https://wp.solam.com/wp-admin
+/index.php https://www.solam.com
 
 # 301 Redirects
 
