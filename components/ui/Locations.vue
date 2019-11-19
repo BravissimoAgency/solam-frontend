@@ -5,52 +5,56 @@
             :key="index"
             class="location"
         >
-            <div class="row">
-                <img
-                    class="icon"
-                    src="../../assets/images/icon-address.svg"
-                >
-                <div class="text">
-                    <h3 class="heading">{{ location.name }}</h3>
-                    <p v-html="location.address"></p>
+            <div class="top">
+                <div class="row">
+                    <img
+                        class="icon"
+                        src="../../assets/images/icon-address.svg"
+                    >
+                    <div class="text">
+                        <h3 class="heading">{{ location.name }}</h3>
+                        <p v-html="location.address"></p>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <img
-                    class="icon"
-                    src="../../assets/images/icon-tel.svg"
+            <div class="bottom">
+                <div class="row">
+                    <img
+                        class="icon"
+                        src="../../assets/images/icon-tel.svg"
+                    >
+                    <p class="text">
+                        Tel. <a :href="`tel:${location.phone}`">
+                            {{ location.phone }}
+                        </a>
+                    </p>
+                </div>
+                <div
+                    v-if="location.secondaryPhone"
+                    class="row"
                 >
-                <p class="text">
-                    Tel. <a :href="`tel:${location.phone}`">
-                        {{ location.phone }}
-                    </a>
-                </p>
-            </div>
-            <div
-                v-if="location.secondaryPhone"
-                class="row"
-            >
-                <img
-                    class="icon"
-                    src="../../assets/images/icon-tel.svg"
+                    <img
+                        class="icon"
+                        src="../../assets/images/icon-tel.svg"
+                    >
+                    <p class="text">
+                        Tel. <a :href="`tel:${location.secondaryPhone}`">
+                            {{ location.secondaryPhone }}
+                        </a>
+                    </p>
+                </div>
+                <div
+                    v-if="location.fax"
+                    class="row"
                 >
-                <p class="text">
-                    Tel. <a :href="`tel:${location.secondaryPhone}`">
-                        {{ location.secondaryPhone }}
-                    </a>
-                </p>
-            </div>
-            <div
-                v-if="location.fax"
-                class="row"
-            >
-                <img
-                    class="icon"
-                    src="../../assets/images/icon-fax.svg"
-                >
-                <p class="text">
-                    Fax. {{ location.fax }}
-                </p>
+                    <img
+                        class="icon"
+                        src="../../assets/images/icon-fax.svg"
+                    >
+                    <p class="text">
+                        Fax. {{ location.fax }}
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -72,22 +76,26 @@ export default {
     margin: 0 -15px -30px;
 }
 .location {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
     width: 50%;
     margin-bottom: 30px;
     padding: 0 15px;
     @media (--mobile) {
+        display: block;
         width: 100%;
         padding-right: 0;
     }
+}
+.top {
+    margin-bottom: 20px;
 }
 .row {
     width: 100%;
     display: flex;
     align-items: flex-start;
     margin-bottom: 8px;
-    &:first-child {
-        margin-bottom: 20px;
-    }
     &:last-child {
         margin-bottom: 0;
     }
