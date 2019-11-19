@@ -115,10 +115,9 @@ export default {
     }
 }
 .top {
-    padding: 70px 100px;
-    padding-bottom: 65px;
+    padding: 55px 100px;
     @media (--smallDesktop) {
-        padding: 60px 50px;
+        padding: 50px;
     }
     @media (--laptop) {
         padding: 40px 30px;
@@ -202,12 +201,12 @@ export default {
     right: 0;
     line-height: 0;
     @media (--laptop) {
-        width: 960px;
+        width: 1010px;
         right: -100px;
     }
     @media (--largeTablet) {
-        width: 1020px;
-        right: -285px;
+        width: 1125px;
+        right: -360px;
     }
     @media (--tablet) {
         display: block;
