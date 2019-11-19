@@ -69,11 +69,12 @@ export default {
 
 <style lang="postcss" scoped>
 .locations {
-    margin-bottom: -30px;
+    margin: 0 -15px -30px;
 }
 .location {
+    width: 50%;
     margin-bottom: 30px;
-    padding-right: 30px;
+    padding: 0 15px;
     @media (--mobile) {
         width: 100%;
         padding-right: 0;
@@ -107,6 +108,9 @@ export default {
         font-size: 15px;
         width: calc(100% - 20px);
     }
+}
+.text >>> strong {
+    font-weight: 600;
 }
 .heading {
     color: var(--primaryColor);
