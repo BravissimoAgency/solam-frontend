@@ -5,6 +5,8 @@ export default function(ctx, inject) {
 
     const domain = window.location.hostname;
 
+    const policyUrl = 'https://wp.solam.com/wp-content/uploads/2020/05/privacy-policy.pdf';
+
     const cookies = {
         analytics: [
             {
@@ -171,7 +173,7 @@ export default function(ctx, inject) {
                     blocks: [
                         {
                             title: "Cookie usage 📢",
-                            description: `We use cookies to ensure the basic functionalities of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want.`,
+                            description: `We use cookies to ensure the basic functionalities of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full <a href="${policyUrl}" target="_blank" class="cc-link">privacy policy</a>.`,
                         },
                         {
                             title: "Strictly necessary cookies",
