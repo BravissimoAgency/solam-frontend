@@ -5,7 +5,7 @@
     "author": "Kim Larsson",
     "private": true,
     "scripts": {
-        "dev": "nuxt",
+        "dev": "set NODE_TLS_REJECT_UNAUTHORIZED=0 && nuxt --env.NODE_TLS_REJECT_UNAUTHORIZED=0",
         "build": "nuxt build",
         "start": "nuxt start",
         "generate": "nuxt generate",
@@ -23,6 +23,7 @@
         "object-fit-images": "^3.2.4",
         "portal-vue": "^1.5.0",
         "v-click-outside": "^2.0.1",
+        "vanilla-cookieconsent": "^2.9.1",
         "vue2-google-maps": "^0.10.4"
     },
     "devDependencies": {
@@ -40,7 +41,7 @@
         "postcss-calc": "^7.0.1",
         "postcss-loader": "^3.0.0",
         "postcss-preset-env": "^6.4.0",
-        "purgecss-webpack-plugin": "^0.22.0",
+        "purgecss-webpack-plugin": "^1.6.0",
         "tailwindcss": "^0.7.2"
     }
 }

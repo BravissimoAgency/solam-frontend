@@ -37,7 +37,6 @@
                 >
                 </div>
             </AppDialogContent>
-            <CookieNotice v-if="!popupActive"/>
         </no-ssr>
         <ExpandedMenu
             :open="menuOpen"
@@ -52,7 +51,6 @@ import TheFooter from '../components/layout/TheFooter.vue';
 import TheHeader from '../components/layout/TheHeader.vue';
 import AppDialogContent from '../components/dialog/AppDialogContent.vue';
 import ExpandedMenu from '../components/ExpandedMenu.vue';
-import CookieNotice from '../components/ui/CookieNotice.vue';
 import options from '../static/json/options.json';
 
 export default {
@@ -61,7 +59,6 @@ export default {
         TheHeader,
         AppDialogContent,
         ExpandedMenu,
-        CookieNotice,
     },
     data: () => ({
         headerFixed: false,

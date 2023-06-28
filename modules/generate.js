@@ -2,11 +2,16 @@ const axios = require('axios');
 const fs = require('fs');
 const ef = require('empty-folder');
 const siteConfig = require('../utils/config');
+const https = require("https");
+
+const agent = new https.Agent({
+    rejectUnauthorized: false
+});
 
 const { baseUrl, apiUrl } = siteConfig;
 
 async function generatePages(dir) {
-    const res = await axios.get(`${apiUrl}/api/page`);
+    const res = await axios.get(`${apiUrl}/api/page`, { httpsAgent: agent });
     res.data.forEach((page) => {
         let name = page.post_link.replace(baseUrl, '');
         name = name.replace(/\//g, '-_-');
@@ -19,7 +24,7 @@ async function generatePages(dir) {
 }
 
 async function generateMenu(dir) {
-    const res = await axios.get(`${apiUrl}/api/menus/primary`);
+    const res = await axios.get(`${apiUrl}/api/menus/primary`, { httpsAgent: agent });
 
     const path = `${dir}/menu.json`;
     fs.writeFile(path, JSON.stringify(res.data), (err) => {
@@ -28,7 +33,7 @@ async function generateMenu(dir) {
 }
 
 async function generateOptions(dir) {
-    const res = await axios.get(`${apiUrl}/api/options`);
+    const res = await axios.get(`${apiUrl}/api/options`, { httpsAgent: agent });
 
     const path = `${dir}/options.json`;
     fs.writeFile(path, JSON.stringify(res.data), (err) => {
@@ -37,7 +42,7 @@ async function generateOptions(dir) {
 }
 
 async function generateProducts(dir) {
-    const res = await axios.get(`${apiUrl}/api/product`);
+    const res = await axios.get(`${apiUrl}/api/product`, { httpsAgent: agent });
 
     const path = `${dir}/products.json`;
     fs.writeFile(path, JSON.stringify(res.data), (err) => {
@@ -46,7 +51,7 @@ async function generateProducts(dir) {
 }
 
 async function generateShortcuts(dir) {
-    const res = await axios.get(`${apiUrl}/api/shortcut`);
+    const res = await axios.get(`${apiUrl}/api/shortcut`, { httpsAgent: agent });
 
     const path = `${dir}/shortcuts.json`;
     fs.writeFile(path, JSON.stringify(res.data), (err) => {
@@ -55,7 +60,7 @@ async function generateShortcuts(dir) {
 }
 
 async function generateApplications(dir) {
-    const res = await axios.get(`${apiUrl}/api/application`);
+    const res = await axios.get(`${apiUrl}/api/application`, { httpsAgent: agent });
 
     const path = `${dir}/applications.json`;
     fs.writeFile(path, JSON.stringify(res.data), (err) => {

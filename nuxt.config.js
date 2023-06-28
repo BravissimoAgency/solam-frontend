@@ -66,23 +66,13 @@ module.exports = {
         '~/plugins/app-image',
         { src: '~/plugins/vue2-google-maps', ssr: false },
         { src: '~/plugins/v-click-outside', ssr: false },
+        { src: '~/plugins/gtm', ssr: false },
+        { src: '~/plugins/cookie-consent', ssr: false },
         '~/plugins/portal-vue',
     ],
 
     modules: [
         '@nuxtjs/sitemap',
-        [
-            '@nuxtjs/google-analytics',
-            {
-                id: 'UA-101268558-39',
-            },
-        ],
-        [
-            '@nuxtjs/google-tag-manager',
-            {
-                id: 'GTM-MVGKCPM',
-            },
-        ],
         '@/modules/generate',
     ],
 
@@ -132,16 +122,7 @@ module.exports = {
                     });
                 }
             }
-
-            // Run ESLint on save
-            if (isDev && isClient) {
-                config.module.rules.push({
-                    enforce: 'pre',
-                    test: /\.(js|vue)$/,
-                    loader: 'eslint-loader',
-                    exclude: /(node_modules)/,
-                });
-            }
+            
             if (!isDev) {
                 // Remove unused CSS using purgecss. See https://github.com/FullHuman/purgecss
                 // for more information about purgecss.
