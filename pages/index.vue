@@ -222,7 +222,7 @@ export default {
     }
 }
 .frontpage >>> .girl {
-    display: none;
+    visibility: hidden;
     z-index: 2;
     position: absolute;
     left: 19px;
