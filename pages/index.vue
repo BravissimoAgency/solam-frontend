@@ -31,11 +31,10 @@
                 classes="backgroundImage ab100"
             />
             <AppImage
-                :image="page.image.url"
+                :image="#"
                 :alt="page.image.alt"
                 :lazy="false"
                 classes="girl"
-                style="display: none;"
             />
         </div>
     </div>
