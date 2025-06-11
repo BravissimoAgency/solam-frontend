@@ -17,7 +17,7 @@
             </div>
             <div class="right">
                 <AppImage
-                    :image="options.footer_image.sizes.medium"
+                    :image="options.footer_image.sizes.large"
                     :alt="options.footer_image.alt"
                     classes="footerImage"
                     style="display:none;"
