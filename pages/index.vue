@@ -35,6 +35,7 @@
                 :alt="page.image.alt"
                 :lazy="false"
                 classes="girl"
+                style="display: none;"
             />
         </div>
     </div>
