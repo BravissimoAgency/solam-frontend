@@ -1,9 +1,9 @@
 <template>
     <picture>
-        <source
+<!--         <source
             :srcset="webpImage"
             type="image/webp"
-        >
+        > -->
         <img
             ref="image"
             :src="imageSrc"
