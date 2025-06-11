@@ -31,7 +31,7 @@
                 classes="backgroundImage ab100"
             />
             <AppImage
-                :image="#"
+                :image="page.image.url"
                 :alt="page.image.alt"
                 :lazy="false"
                 classes="girl"
