@@ -16,7 +16,7 @@
         "@nuxtjs/google-analytics": "^2.0.2",
         "@nuxtjs/google-tag-manager": "^2.1.0",
         "@nuxtjs/sitemap": "^0.1.1",
-        "axios": "^0.18.0",
+        "axios": "^0.19.2"
         "empty-folder": "^2.0.3",
         "intersection-observer": "^0.5.1",
         "nuxt": "^2.2.0",
