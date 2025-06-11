@@ -20,7 +20,6 @@
                     :image="options.footer_image.sizes.large"
                     :alt="options.footer_image.alt"
                     classes="footerImage"
-                    style="display: none;"
                 />
             </div>
         </div>
